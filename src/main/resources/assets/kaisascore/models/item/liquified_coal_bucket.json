@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "kaisascore:item/liquified_coal_bucket"
+    }
+}

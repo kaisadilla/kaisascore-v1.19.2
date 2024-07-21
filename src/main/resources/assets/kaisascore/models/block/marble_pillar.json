@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "kaisascore:block/marble_pillar_top",
+        "side": "kaisascore:block/marble_pillar"
+    }
+}

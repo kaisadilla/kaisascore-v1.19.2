@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:marble",
+        "kaisascore:marble_bricks",
+        "kaisascore:marble_pillar",
+        "kaisascore:polished_marble"
+    ]
+}
