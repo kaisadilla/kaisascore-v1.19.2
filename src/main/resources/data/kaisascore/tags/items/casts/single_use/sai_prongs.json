@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:sai_prongs_sand_cast",
+        "kaisascore:sai_prongs_red_sand_cast",
+        "kaisascore:sai_prongs_white_sand_cast",
+        "kaisascore:sai_prongs_orange_sand_cast",
+        "kaisascore:sai_prongs_black_sand_cast"
+    ]
+}

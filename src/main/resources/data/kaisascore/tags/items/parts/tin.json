@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "tin_pickaxe_head",
+        "tin_axe_head",
+        "tin_shovel_head",
+        "tin_hoe_head",
+        "tin_hammer_head",
+        "tin_excavator_head",
+        "tin_null",
+        "tin_bow_grip",
+        "tin_null",
+        "tin_short_blade",
+        "tin_blade",
+        "tin_long_blade",
+        "tin_very_long_blade",
+        "tin_thin_blade",
+        "tin_rapier_hilt",
+        "tin_short_single_edged_blade",
+        "tin_single_edged_blade",
+        "tin_sai_prongs",
+        "tin_null",
+        "tin_curved_blade",
+        "tin_warhammer_head",
+        "tin_battle_axe_head",
+        "tin_scythe_head",
+        "tin_halberd_head"
+    ]
+}

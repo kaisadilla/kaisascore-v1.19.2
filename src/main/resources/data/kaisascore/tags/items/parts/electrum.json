@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "electrum_pickaxe_head",
+        "electrum_axe_head",
+        "electrum_shovel_head",
+        "electrum_hoe_head",
+        "electrum_hammer_head",
+        "electrum_excavator_head",
+        "electrum_null",
+        "electrum_bow_grip",
+        "electrum_null",
+        "electrum_short_blade",
+        "electrum_blade",
+        "electrum_long_blade",
+        "electrum_very_long_blade",
+        "electrum_thin_blade",
+        "electrum_rapier_hilt",
+        "electrum_short_single_edged_blade",
+        "electrum_single_edged_blade",
+        "electrum_sai_prongs",
+        "electrum_null",
+        "electrum_curved_blade",
+        "electrum_warhammer_head",
+        "electrum_battle_axe_head",
+        "electrum_scythe_head",
+        "electrum_halberd_head"
+    ]
+}

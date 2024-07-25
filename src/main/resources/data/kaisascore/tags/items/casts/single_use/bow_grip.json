@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:bow_grip_sand_cast",
+        "kaisascore:bow_grip_red_sand_cast",
+        "kaisascore:bow_grip_white_sand_cast",
+        "kaisascore:bow_grip_orange_sand_cast",
+        "kaisascore:bow_grip_black_sand_cast"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:warhammer_head_sand_cast",
+        "kaisascore:warhammer_head_red_sand_cast",
+        "kaisascore:warhammer_head_white_sand_cast",
+        "kaisascore:warhammer_head_orange_sand_cast",
+        "kaisascore:warhammer_head_black_sand_cast"
+    ]
+}

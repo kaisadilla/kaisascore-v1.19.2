@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kaisascore:item/sai_prongs_orange_sand_cast"
+    }
+}

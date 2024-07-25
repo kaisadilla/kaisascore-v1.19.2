@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "obsidian_pickaxe_head",
+        "obsidian_axe_head",
+        "obsidian_shovel_head",
+        "obsidian_hoe_head",
+        "obsidian_hammer_head",
+        "obsidian_excavator_head",
+        "obsidian_null",
+        "obsidian_bow_grip",
+        "obsidian_null",
+        "obsidian_short_blade",
+        "obsidian_blade",
+        "obsidian_long_blade",
+        "obsidian_very_long_blade",
+        "obsidian_thin_blade",
+        "obsidian_rapier_hilt",
+        "obsidian_short_single_edged_blade",
+        "obsidian_single_edged_blade",
+        "obsidian_sai_prongs",
+        "obsidian_null",
+        "obsidian_curved_blade",
+        "obsidian_warhammer_head",
+        "obsidian_battle_axe_head",
+        "obsidian_scythe_head",
+        "obsidian_halberd_head"
+    ]
+}

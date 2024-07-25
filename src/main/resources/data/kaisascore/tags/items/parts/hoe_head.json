@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_hoe_head",
+        "tin_hoe_head",
+        "lead_hoe_head",
+        "obsidian_hoe_head",
+        "bronze_hoe_head",
+        "iron_hoe_head",
+        "nickel_hoe_head",
+        "steel_hoe_head",
+        "electrum_hoe_head",
+        "platinum_hoe_head",
+        "titanium_hoe_head"
+    ]
+}

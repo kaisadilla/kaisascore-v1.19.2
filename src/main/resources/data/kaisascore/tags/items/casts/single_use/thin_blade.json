@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:thin_blade_sand_cast",
+        "kaisascore:thin_blade_red_sand_cast",
+        "kaisascore:thin_blade_white_sand_cast",
+        "kaisascore:thin_blade_orange_sand_cast",
+        "kaisascore:thin_blade_black_sand_cast"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "platinum_pickaxe_head",
+        "platinum_axe_head",
+        "platinum_shovel_head",
+        "platinum_hoe_head",
+        "platinum_hammer_head",
+        "platinum_excavator_head",
+        "platinum_null",
+        "platinum_bow_grip",
+        "platinum_null",
+        "platinum_short_blade",
+        "platinum_blade",
+        "platinum_long_blade",
+        "platinum_very_long_blade",
+        "platinum_thin_blade",
+        "platinum_rapier_hilt",
+        "platinum_short_single_edged_blade",
+        "platinum_single_edged_blade",
+        "platinum_sai_prongs",
+        "platinum_null",
+        "platinum_curved_blade",
+        "platinum_warhammer_head",
+        "platinum_battle_axe_head",
+        "platinum_scythe_head",
+        "platinum_halberd_head"
+    ]
+}

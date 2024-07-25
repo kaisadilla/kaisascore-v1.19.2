@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:rapier_hilt_sand_cast",
+        "kaisascore:rapier_hilt_red_sand_cast",
+        "kaisascore:rapier_hilt_white_sand_cast",
+        "kaisascore:rapier_hilt_orange_sand_cast",
+        "kaisascore:rapier_hilt_black_sand_cast"
+    ]
+}

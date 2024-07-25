@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kaisascore:item/short_single_edged_blade_black_sand_cast"
+    }
+}

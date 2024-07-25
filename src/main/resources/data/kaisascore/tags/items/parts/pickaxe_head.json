@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_pickaxe_head",
+        "tin_pickaxe_head",
+        "lead_pickaxe_head",
+        "obsidian_pickaxe_head",
+        "bronze_pickaxe_head",
+        "iron_pickaxe_head",
+        "nickel_pickaxe_head",
+        "steel_pickaxe_head",
+        "electrum_pickaxe_head",
+        "platinum_pickaxe_head",
+        "titanium_pickaxe_head"
+    ]
+}

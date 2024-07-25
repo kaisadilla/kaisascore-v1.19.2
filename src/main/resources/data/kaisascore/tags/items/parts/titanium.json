@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "titanium_pickaxe_head",
+        "titanium_axe_head",
+        "titanium_shovel_head",
+        "titanium_hoe_head",
+        "titanium_hammer_head",
+        "titanium_excavator_head",
+        "titanium_null",
+        "titanium_bow_grip",
+        "titanium_null",
+        "titanium_short_blade",
+        "titanium_blade",
+        "titanium_long_blade",
+        "titanium_very_long_blade",
+        "titanium_thin_blade",
+        "titanium_rapier_hilt",
+        "titanium_short_single_edged_blade",
+        "titanium_single_edged_blade",
+        "titanium_sai_prongs",
+        "titanium_null",
+        "titanium_curved_blade",
+        "titanium_warhammer_head",
+        "titanium_battle_axe_head",
+        "titanium_scythe_head",
+        "titanium_halberd_head"
+    ]
+}

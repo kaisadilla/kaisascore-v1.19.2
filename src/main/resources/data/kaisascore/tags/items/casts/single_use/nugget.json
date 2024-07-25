@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:nugget_sand_cast",
+        "kaisascore:nugget_red_sand_cast",
+        "kaisascore:nugget_white_sand_cast",
+        "kaisascore:nugget_orange_sand_cast",
+        "kaisascore:nugget_black_sand_cast"
+    ]
+}

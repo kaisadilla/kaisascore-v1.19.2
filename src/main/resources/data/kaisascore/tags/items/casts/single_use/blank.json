@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:blank_sand_cast",
+        "kaisascore:blank_red_sand_cast",
+        "kaisascore:blank_white_sand_cast",
+        "kaisascore:blank_orange_sand_cast",
+        "kaisascore:blank_black_sand_cast"
+    ]
+}

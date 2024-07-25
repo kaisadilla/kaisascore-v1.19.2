@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_hammer_head",
+        "tin_hammer_head",
+        "lead_hammer_head",
+        "obsidian_hammer_head",
+        "bronze_hammer_head",
+        "iron_hammer_head",
+        "nickel_hammer_head",
+        "steel_hammer_head",
+        "electrum_hammer_head",
+        "platinum_hammer_head",
+        "titanium_hammer_head"
+    ]
+}

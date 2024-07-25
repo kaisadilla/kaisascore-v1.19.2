@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_single_edged_blade",
+        "tin_single_edged_blade",
+        "lead_single_edged_blade",
+        "obsidian_single_edged_blade",
+        "bronze_single_edged_blade",
+        "iron_single_edged_blade",
+        "nickel_single_edged_blade",
+        "steel_single_edged_blade",
+        "electrum_single_edged_blade",
+        "platinum_single_edged_blade",
+        "titanium_single_edged_blade"
+    ]
+}

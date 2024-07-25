@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_bow_grip",
+        "tin_bow_grip",
+        "lead_bow_grip",
+        "obsidian_bow_grip",
+        "bronze_bow_grip",
+        "iron_bow_grip",
+        "nickel_bow_grip",
+        "steel_bow_grip",
+        "electrum_bow_grip",
+        "platinum_bow_grip",
+        "titanium_bow_grip"
+    ]
+}

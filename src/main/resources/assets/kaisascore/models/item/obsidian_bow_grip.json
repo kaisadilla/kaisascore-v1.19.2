@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kaisascore:item/obsidian_bow_grip"
+    }
+}

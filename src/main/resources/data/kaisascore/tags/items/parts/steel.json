@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "steel_pickaxe_head",
+        "steel_axe_head",
+        "steel_shovel_head",
+        "steel_hoe_head",
+        "steel_hammer_head",
+        "steel_excavator_head",
+        "steel_null",
+        "steel_bow_grip",
+        "steel_null",
+        "steel_short_blade",
+        "steel_blade",
+        "steel_long_blade",
+        "steel_very_long_blade",
+        "steel_thin_blade",
+        "steel_rapier_hilt",
+        "steel_short_single_edged_blade",
+        "steel_single_edged_blade",
+        "steel_sai_prongs",
+        "steel_null",
+        "steel_curved_blade",
+        "steel_warhammer_head",
+        "steel_battle_axe_head",
+        "steel_scythe_head",
+        "steel_halberd_head"
+    ]
+}

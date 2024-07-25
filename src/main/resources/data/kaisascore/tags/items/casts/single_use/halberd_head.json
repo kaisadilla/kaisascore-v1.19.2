@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:halberd_head_sand_cast",
+        "kaisascore:halberd_head_red_sand_cast",
+        "kaisascore:halberd_head_white_sand_cast",
+        "kaisascore:halberd_head_orange_sand_cast",
+        "kaisascore:halberd_head_black_sand_cast"
+    ]
+}

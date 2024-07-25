@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_null",
+        "tin_null",
+        "lead_null",
+        "obsidian_null",
+        "bronze_null",
+        "iron_null",
+        "nickel_null",
+        "steel_null",
+        "electrum_null",
+        "platinum_null",
+        "titanium_null"
+    ]
+}

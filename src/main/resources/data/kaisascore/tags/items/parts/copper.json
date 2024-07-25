@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "copper_pickaxe_head",
+        "copper_axe_head",
+        "copper_shovel_head",
+        "copper_hoe_head",
+        "copper_hammer_head",
+        "copper_excavator_head",
+        "copper_null",
+        "copper_bow_grip",
+        "copper_null",
+        "copper_short_blade",
+        "copper_blade",
+        "copper_long_blade",
+        "copper_very_long_blade",
+        "copper_thin_blade",
+        "copper_rapier_hilt",
+        "copper_short_single_edged_blade",
+        "copper_single_edged_blade",
+        "copper_sai_prongs",
+        "copper_null",
+        "copper_curved_blade",
+        "copper_warhammer_head",
+        "copper_battle_axe_head",
+        "copper_scythe_head",
+        "copper_halberd_head"
+    ]
+}

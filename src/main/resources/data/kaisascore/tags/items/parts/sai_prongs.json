@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_sai_prongs",
+        "tin_sai_prongs",
+        "lead_sai_prongs",
+        "obsidian_sai_prongs",
+        "bronze_sai_prongs",
+        "iron_sai_prongs",
+        "nickel_sai_prongs",
+        "steel_sai_prongs",
+        "electrum_sai_prongs",
+        "platinum_sai_prongs",
+        "titanium_sai_prongs"
+    ]
+}

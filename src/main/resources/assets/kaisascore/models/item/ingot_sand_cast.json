@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kaisascore:item/ingot_sand_cast"
+    }
+}

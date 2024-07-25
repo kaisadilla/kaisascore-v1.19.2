@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_thin_blade",
+        "tin_thin_blade",
+        "lead_thin_blade",
+        "obsidian_thin_blade",
+        "bronze_thin_blade",
+        "iron_thin_blade",
+        "nickel_thin_blade",
+        "steel_thin_blade",
+        "electrum_thin_blade",
+        "platinum_thin_blade",
+        "titanium_thin_blade"
+    ]
+}

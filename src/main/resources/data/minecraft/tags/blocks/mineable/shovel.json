@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:dirt_redstone_ore",
+        "kaisascore:sand_gold_ore",
+        "kaisascore:sand_pyrite_ore"
+    ]
+}

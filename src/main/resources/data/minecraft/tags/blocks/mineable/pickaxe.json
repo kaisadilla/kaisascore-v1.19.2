@@ -2,12 +2,15 @@
     "replace": false,
     "values": [
         "kaisascore:basalt_bricks",
+        "kaisascore:deepslate_pyrite_ore",
         "kaisascore:deepslate_titanium_ore",
         "kaisascore:marble",
         "kaisascore:marble_bricks",
         "kaisascore:marble_pillar",
+        "kaisascore:nether_pyrite_ore",
         "kaisascore:polished_basalt",
         "kaisascore:polished_marble",
+        "kaisascore:pyrite_ore",
         "kaisascore:steel_block",
         "kaisascore:titanium_block",
         "kaisascore:titanium_ore"

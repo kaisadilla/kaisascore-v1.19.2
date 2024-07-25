@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_scythe_head",
+        "tin_scythe_head",
+        "lead_scythe_head",
+        "obsidian_scythe_head",
+        "bronze_scythe_head",
+        "iron_scythe_head",
+        "nickel_scythe_head",
+        "steel_scythe_head",
+        "electrum_scythe_head",
+        "platinum_scythe_head",
+        "titanium_scythe_head"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:single_edged_blade_sand_cast",
+        "kaisascore:single_edged_blade_red_sand_cast",
+        "kaisascore:single_edged_blade_white_sand_cast",
+        "kaisascore:single_edged_blade_orange_sand_cast",
+        "kaisascore:single_edged_blade_black_sand_cast"
+    ]
+}

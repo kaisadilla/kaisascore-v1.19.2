@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:ingot_sand_cast",
+        "kaisascore:ingot_red_sand_cast",
+        "kaisascore:ingot_white_sand_cast",
+        "kaisascore:ingot_orange_sand_cast",
+        "kaisascore:ingot_black_sand_cast"
+    ]
+}

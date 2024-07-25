@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "lead_pickaxe_head",
+        "lead_axe_head",
+        "lead_shovel_head",
+        "lead_hoe_head",
+        "lead_hammer_head",
+        "lead_excavator_head",
+        "lead_null",
+        "lead_bow_grip",
+        "lead_null",
+        "lead_short_blade",
+        "lead_blade",
+        "lead_long_blade",
+        "lead_very_long_blade",
+        "lead_thin_blade",
+        "lead_rapier_hilt",
+        "lead_short_single_edged_blade",
+        "lead_single_edged_blade",
+        "lead_sai_prongs",
+        "lead_null",
+        "lead_curved_blade",
+        "lead_warhammer_head",
+        "lead_battle_axe_head",
+        "lead_scythe_head",
+        "lead_halberd_head"
+    ]
+}

@@ -1,7 +1,7 @@
 package azaria.kaisascore.block;
 
 import azaria.kaisascore.KaisasCore;
-import azaria.kaisascore.fluids.ModFluids;
+import azaria.kaisascore.fluid.ModFluids;
 import azaria.kaisascore.item.ModCreativeModeTab;
 import azaria.kaisascore.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -53,6 +53,15 @@ public class ModBlocks {
         ModCreativeModeTab.KAISACRAFT_TAB
     );
 
+    public static final RegistryObject<Block> SAND_GOLD_ORE = registerBlock(
+        "sand_gold_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.SAND)
+            .strength(1.5f)
+            .sound(SoundType.SAND)
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
     public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock(
         "titanium_block",
         () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
@@ -80,6 +89,51 @@ public class ModBlocks {
         ModCreativeModeTab.KAISACRAFT_TAB
     );
 
+    public static final RegistryObject<Block> PYRITE_ORE = registerBlock(
+        "pyrite_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(3f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
+    public static final RegistryObject<Block> DEEPSLATE_PYRITE_ORE = registerBlock(
+        "deepslate_pyrite_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(4.5f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
+    public static final RegistryObject<Block> NETHER_PYRITE_ORE = registerBlock(
+        "nether_pyrite_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(3f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
+    public static final RegistryObject<Block> SAND_PYRITE_ORE = registerBlock(
+        "sand_pyrite_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.SAND)
+            .strength(1f)
+            .sound(SoundType.SAND)
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
+    public static final RegistryObject<Block> DIRT_REDSTONE_ORE = registerBlock(
+        "dirt_redstone_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
+            .strength(1f)
+            .sound(SoundType.GRAVEL)
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
     public static final RegistryObject<LiquidBlock> LIQUIFIED_COAL_BLOCK = BLOCKS.register(
         "liquified_coal_block",
         () -> new LiquidBlock(
@@ -87,6 +141,12 @@ public class ModBlocks {
             BlockBehaviour.Properties.copy(Blocks.LAVA)
         )
     );
+
+    //public static final RegistryObject<KStonecutterBlock> STONECUTTER = registerBlock(
+    //    "stonecutter",
+    //    () -> new KStonecutterBlock(BlockBehaviour.Properties.copy(Blocks.STONECUTTER)),
+    //    ModCreativeModeTab.KAISACRAFT_TAB
+    //);
 
     public static void register (IEventBus eventBus) {
         BLOCKS.register(eventBus);

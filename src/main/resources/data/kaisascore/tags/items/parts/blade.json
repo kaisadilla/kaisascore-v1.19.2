@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_blade",
+        "tin_blade",
+        "lead_blade",
+        "obsidian_blade",
+        "bronze_blade",
+        "iron_blade",
+        "nickel_blade",
+        "steel_blade",
+        "electrum_blade",
+        "platinum_blade",
+        "titanium_blade"
+    ]
+}

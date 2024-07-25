@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "copper_axe_head",
+        "tin_axe_head",
+        "lead_axe_head",
+        "obsidian_axe_head",
+        "bronze_axe_head",
+        "iron_axe_head",
+        "nickel_axe_head",
+        "steel_axe_head",
+        "electrum_axe_head",
+        "platinum_axe_head",
+        "titanium_axe_head"
+    ]
+}

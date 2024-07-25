@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "bronze_pickaxe_head",
+        "bronze_axe_head",
+        "bronze_shovel_head",
+        "bronze_hoe_head",
+        "bronze_hammer_head",
+        "bronze_excavator_head",
+        "bronze_null",
+        "bronze_bow_grip",
+        "bronze_null",
+        "bronze_short_blade",
+        "bronze_blade",
+        "bronze_long_blade",
+        "bronze_very_long_blade",
+        "bronze_thin_blade",
+        "bronze_rapier_hilt",
+        "bronze_short_single_edged_blade",
+        "bronze_single_edged_blade",
+        "bronze_sai_prongs",
+        "bronze_null",
+        "bronze_curved_blade",
+        "bronze_warhammer_head",
+        "bronze_battle_axe_head",
+        "bronze_scythe_head",
+        "bronze_halberd_head"
+    ]
+}
