@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_shovel_head",
-        "tin_shovel_head",
-        "lead_shovel_head",
-        "obsidian_shovel_head",
-        "bronze_shovel_head",
-        "iron_shovel_head",
-        "nickel_shovel_head",
-        "steel_shovel_head",
-        "electrum_shovel_head",
-        "platinum_shovel_head",
-        "titanium_shovel_head"
+        "kaisascore:copper_shovel_head",
+        "kaisascore:tin_shovel_head",
+        "kaisascore:lead_shovel_head",
+        "kaisascore:obsidian_shovel_head",
+        "kaisascore:bronze_shovel_head",
+        "kaisascore:iron_shovel_head",
+        "kaisascore:nickel_shovel_head",
+        "kaisascore:steel_shovel_head",
+        "kaisascore:electrum_shovel_head",
+        "kaisascore:platinum_shovel_head",
+        "kaisascore:titanium_shovel_head"
     ]
 }

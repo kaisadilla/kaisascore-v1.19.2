@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_hoe_head",
-        "tin_hoe_head",
-        "lead_hoe_head",
-        "obsidian_hoe_head",
-        "bronze_hoe_head",
-        "iron_hoe_head",
-        "nickel_hoe_head",
-        "steel_hoe_head",
-        "electrum_hoe_head",
-        "platinum_hoe_head",
-        "titanium_hoe_head"
+        "kaisascore:copper_hoe_head",
+        "kaisascore:tin_hoe_head",
+        "kaisascore:lead_hoe_head",
+        "kaisascore:obsidian_hoe_head",
+        "kaisascore:bronze_hoe_head",
+        "kaisascore:iron_hoe_head",
+        "kaisascore:nickel_hoe_head",
+        "kaisascore:steel_hoe_head",
+        "kaisascore:electrum_hoe_head",
+        "kaisascore:platinum_hoe_head",
+        "kaisascore:titanium_hoe_head"
     ]
 }

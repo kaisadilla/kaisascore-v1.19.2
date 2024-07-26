@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_sai_prongs",
-        "tin_sai_prongs",
-        "lead_sai_prongs",
-        "obsidian_sai_prongs",
-        "bronze_sai_prongs",
-        "iron_sai_prongs",
-        "nickel_sai_prongs",
-        "steel_sai_prongs",
-        "electrum_sai_prongs",
-        "platinum_sai_prongs",
-        "titanium_sai_prongs"
+        "kaisascore:copper_sai_prongs",
+        "kaisascore:tin_sai_prongs",
+        "kaisascore:lead_sai_prongs",
+        "kaisascore:obsidian_sai_prongs",
+        "kaisascore:bronze_sai_prongs",
+        "kaisascore:iron_sai_prongs",
+        "kaisascore:nickel_sai_prongs",
+        "kaisascore:steel_sai_prongs",
+        "kaisascore:electrum_sai_prongs",
+        "kaisascore:platinum_sai_prongs",
+        "kaisascore:titanium_sai_prongs"
     ]
 }

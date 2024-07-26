@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_axe_head",
-        "tin_axe_head",
-        "lead_axe_head",
-        "obsidian_axe_head",
-        "bronze_axe_head",
-        "iron_axe_head",
-        "nickel_axe_head",
-        "steel_axe_head",
-        "electrum_axe_head",
-        "platinum_axe_head",
-        "titanium_axe_head"
+        "kaisascore:copper_axe_head",
+        "kaisascore:tin_axe_head",
+        "kaisascore:lead_axe_head",
+        "kaisascore:obsidian_axe_head",
+        "kaisascore:bronze_axe_head",
+        "kaisascore:iron_axe_head",
+        "kaisascore:nickel_axe_head",
+        "kaisascore:steel_axe_head",
+        "kaisascore:electrum_axe_head",
+        "kaisascore:platinum_axe_head",
+        "kaisascore:titanium_axe_head"
     ]
 }

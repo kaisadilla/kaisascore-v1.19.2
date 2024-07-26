@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_halberd_head",
-        "tin_halberd_head",
-        "lead_halberd_head",
-        "obsidian_halberd_head",
-        "bronze_halberd_head",
-        "iron_halberd_head",
-        "nickel_halberd_head",
-        "steel_halberd_head",
-        "electrum_halberd_head",
-        "platinum_halberd_head",
-        "titanium_halberd_head"
+        "kaisascore:copper_halberd_head",
+        "kaisascore:tin_halberd_head",
+        "kaisascore:lead_halberd_head",
+        "kaisascore:obsidian_halberd_head",
+        "kaisascore:bronze_halberd_head",
+        "kaisascore:iron_halberd_head",
+        "kaisascore:nickel_halberd_head",
+        "kaisascore:steel_halberd_head",
+        "kaisascore:electrum_halberd_head",
+        "kaisascore:platinum_halberd_head",
+        "kaisascore:titanium_halberd_head"
     ]
 }

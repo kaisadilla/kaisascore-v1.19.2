@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_rapier_hilt",
-        "tin_rapier_hilt",
-        "lead_rapier_hilt",
-        "obsidian_rapier_hilt",
-        "bronze_rapier_hilt",
-        "iron_rapier_hilt",
-        "nickel_rapier_hilt",
-        "steel_rapier_hilt",
-        "electrum_rapier_hilt",
-        "platinum_rapier_hilt",
-        "titanium_rapier_hilt"
+        "kaisascore:copper_rapier_hilt",
+        "kaisascore:tin_rapier_hilt",
+        "kaisascore:lead_rapier_hilt",
+        "kaisascore:obsidian_rapier_hilt",
+        "kaisascore:bronze_rapier_hilt",
+        "kaisascore:iron_rapier_hilt",
+        "kaisascore:nickel_rapier_hilt",
+        "kaisascore:steel_rapier_hilt",
+        "kaisascore:electrum_rapier_hilt",
+        "kaisascore:platinum_rapier_hilt",
+        "kaisascore:titanium_rapier_hilt"
     ]
 }

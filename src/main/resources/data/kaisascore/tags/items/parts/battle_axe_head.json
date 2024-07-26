@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_battle_axe_head",
-        "tin_battle_axe_head",
-        "lead_battle_axe_head",
-        "obsidian_battle_axe_head",
-        "bronze_battle_axe_head",
-        "iron_battle_axe_head",
-        "nickel_battle_axe_head",
-        "steel_battle_axe_head",
-        "electrum_battle_axe_head",
-        "platinum_battle_axe_head",
-        "titanium_battle_axe_head"
+        "kaisascore:copper_battle_axe_head",
+        "kaisascore:tin_battle_axe_head",
+        "kaisascore:lead_battle_axe_head",
+        "kaisascore:obsidian_battle_axe_head",
+        "kaisascore:bronze_battle_axe_head",
+        "kaisascore:iron_battle_axe_head",
+        "kaisascore:nickel_battle_axe_head",
+        "kaisascore:steel_battle_axe_head",
+        "kaisascore:electrum_battle_axe_head",
+        "kaisascore:platinum_battle_axe_head",
+        "kaisascore:titanium_battle_axe_head"
     ]
 }

@@ -1,16 +1,17 @@
-package azaria.kaisascore.item.axe;
+package azaria.kaisascore.item.tools;
 
-import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
-public class BelowNetheriteAxeItem extends AxeItem {
+public class BelowNetheriteHoeItem extends HoeItem {
     private boolean _isEnchantable = true;
 
-    public BelowNetheriteAxeItem (
+    public BelowNetheriteHoeItem (
         Tier pTier,
         int pAttackDamageModifier,
         float pAttackSpeedModifier,
@@ -19,7 +20,7 @@ public class BelowNetheriteAxeItem extends AxeItem {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
-    public BelowNetheriteAxeItem setEnchantable (boolean enchantable) {
+    public BelowNetheriteHoeItem setEnchantable (boolean enchantable) {
         _isEnchantable = enchantable;
         return this;
     }

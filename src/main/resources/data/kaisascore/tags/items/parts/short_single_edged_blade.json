@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_short_single_edged_blade",
-        "tin_short_single_edged_blade",
-        "lead_short_single_edged_blade",
-        "obsidian_short_single_edged_blade",
-        "bronze_short_single_edged_blade",
-        "iron_short_single_edged_blade",
-        "nickel_short_single_edged_blade",
-        "steel_short_single_edged_blade",
-        "electrum_short_single_edged_blade",
-        "platinum_short_single_edged_blade",
-        "titanium_short_single_edged_blade"
+        "kaisascore:copper_short_single_edged_blade",
+        "kaisascore:tin_short_single_edged_blade",
+        "kaisascore:lead_short_single_edged_blade",
+        "kaisascore:obsidian_short_single_edged_blade",
+        "kaisascore:bronze_short_single_edged_blade",
+        "kaisascore:iron_short_single_edged_blade",
+        "kaisascore:nickel_short_single_edged_blade",
+        "kaisascore:steel_short_single_edged_blade",
+        "kaisascore:electrum_short_single_edged_blade",
+        "kaisascore:platinum_short_single_edged_blade",
+        "kaisascore:titanium_short_single_edged_blade"
     ]
 }

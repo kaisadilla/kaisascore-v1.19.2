@@ -35,6 +35,7 @@ public class ModTags {
                 public static final TagKey<Item> INVAR = forgeTag("ingots/invar");
                 public static final TagKey<Item> SILVER = forgeTag("ingots/silver");
                 public static final TagKey<Item> ELECTRUM = forgeTag("ingots/electrum");
+                public static final TagKey<Item> PLATINUM = forgeTag("ingots/platinum");
                 public static final TagKey<Item> TITANIUM = forgeTag("ingots/titanium");
             }
         }

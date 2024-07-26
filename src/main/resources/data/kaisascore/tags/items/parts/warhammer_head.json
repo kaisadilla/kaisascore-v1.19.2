@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_warhammer_head",
-        "tin_warhammer_head",
-        "lead_warhammer_head",
-        "obsidian_warhammer_head",
-        "bronze_warhammer_head",
-        "iron_warhammer_head",
-        "nickel_warhammer_head",
-        "steel_warhammer_head",
-        "electrum_warhammer_head",
-        "platinum_warhammer_head",
-        "titanium_warhammer_head"
+        "kaisascore:copper_warhammer_head",
+        "kaisascore:tin_warhammer_head",
+        "kaisascore:lead_warhammer_head",
+        "kaisascore:obsidian_warhammer_head",
+        "kaisascore:bronze_warhammer_head",
+        "kaisascore:iron_warhammer_head",
+        "kaisascore:nickel_warhammer_head",
+        "kaisascore:steel_warhammer_head",
+        "kaisascore:electrum_warhammer_head",
+        "kaisascore:platinum_warhammer_head",
+        "kaisascore:titanium_warhammer_head"
     ]
 }

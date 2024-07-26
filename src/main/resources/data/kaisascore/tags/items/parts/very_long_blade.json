@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_very_long_blade",
-        "tin_very_long_blade",
-        "lead_very_long_blade",
-        "obsidian_very_long_blade",
-        "bronze_very_long_blade",
-        "iron_very_long_blade",
-        "nickel_very_long_blade",
-        "steel_very_long_blade",
-        "electrum_very_long_blade",
-        "platinum_very_long_blade",
-        "titanium_very_long_blade"
+        "kaisascore:copper_very_long_blade",
+        "kaisascore:tin_very_long_blade",
+        "kaisascore:lead_very_long_blade",
+        "kaisascore:obsidian_very_long_blade",
+        "kaisascore:bronze_very_long_blade",
+        "kaisascore:iron_very_long_blade",
+        "kaisascore:nickel_very_long_blade",
+        "kaisascore:steel_very_long_blade",
+        "kaisascore:electrum_very_long_blade",
+        "kaisascore:platinum_very_long_blade",
+        "kaisascore:titanium_very_long_blade"
     ]
 }

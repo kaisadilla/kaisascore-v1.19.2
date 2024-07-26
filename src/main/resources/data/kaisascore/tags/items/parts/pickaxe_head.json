@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_pickaxe_head",
-        "tin_pickaxe_head",
-        "lead_pickaxe_head",
-        "obsidian_pickaxe_head",
-        "bronze_pickaxe_head",
-        "iron_pickaxe_head",
-        "nickel_pickaxe_head",
-        "steel_pickaxe_head",
-        "electrum_pickaxe_head",
-        "platinum_pickaxe_head",
-        "titanium_pickaxe_head"
+        "kaisascore:copper_pickaxe_head",
+        "kaisascore:tin_pickaxe_head",
+        "kaisascore:lead_pickaxe_head",
+        "kaisascore:obsidian_pickaxe_head",
+        "kaisascore:bronze_pickaxe_head",
+        "kaisascore:iron_pickaxe_head",
+        "kaisascore:nickel_pickaxe_head",
+        "kaisascore:steel_pickaxe_head",
+        "kaisascore:electrum_pickaxe_head",
+        "kaisascore:platinum_pickaxe_head",
+        "kaisascore:titanium_pickaxe_head"
     ]
 }

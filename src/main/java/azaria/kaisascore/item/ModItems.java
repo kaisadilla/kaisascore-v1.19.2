@@ -2,8 +2,7 @@ package azaria.kaisascore.item;
 
 import azaria.kaisascore.KaisasCore;
 import azaria.kaisascore.fluid.ModFluids;
-import azaria.kaisascore.item.axe.BelowNetheriteAxeItem;
-import azaria.kaisascore.item.pickaxe.BelowNetheritePickaxeItem;
+import azaria.kaisascore.item.tools.*;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -55,116 +54,74 @@ public class ModItems {
     // region Pickaxes
     public static final RegistryObject<BelowNetheritePickaxeItem> FLINT_PICK = ITEMS.register(
         "flint_pick",
-        () -> new BelowNetheritePickaxeItem(ModTiers.FLINT, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.FLINT, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
     public static final RegistryObject<BelowNetheritePickaxeItem> COPPER_PICKAXE = ITEMS.register(
         "copper_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.COPPER, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.COPPER, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
     public static final RegistryObject<BelowNetheritePickaxeItem> TIN_PICKAXE = ITEMS.register(
         "tin_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.TIN, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.TIN, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
     public static final RegistryObject<BelowNetheritePickaxeItem> LEAD_PICKAXE = ITEMS.register(
         "lead_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.LEAD, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.LEAD, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
+    public static final RegistryObject<BelowNetheritePickaxeItem> OBSIDIAN_PICKAXE = ITEMS.register(
+        "obsidian_pickaxe",
+        () -> new BelowNetheritePickaxeItem(ModTiers.OBSIDIAN, 1, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
     public static final RegistryObject<BelowNetheritePickaxeItem> BRONZE_PICKAXE = ITEMS.register(
         "bronze_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.BRONZE, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.BRONZE, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
     public static final RegistryObject<BelowNetheritePickaxeItem> IRON_PICKAXE = ITEMS.register(
         "iron_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.IRON, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.IRON, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
     public static final RegistryObject<BelowNetheritePickaxeItem> NICKEL_PICKAXE = ITEMS.register(
         "nickel_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.NICKEL, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.NICKEL, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         ).setEnchantable(false)
     );
-
     public static final RegistryObject<BelowNetheritePickaxeItem> STEEL_PICKAXE = ITEMS.register(
         "steel_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.STEEL, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.STEEL, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
-    public static final RegistryObject<BelowNetheritePickaxeItem> CONSTANTAN_PICKAXE = ITEMS.register(
-        "constantan_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.CONSTANTAN, 1, 1f, new Item.Properties()
-            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        ).setEnchantable(false)
-    );
-
-    public static final RegistryObject<BelowNetheritePickaxeItem> INVAR_PICKAXE = ITEMS.register(
-        "invar_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.INVAR, 1, 1f, new Item.Properties()
-            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        ).setEnchantable(false)
-    );
-
-    public static final RegistryObject<BelowNetheritePickaxeItem> GOLDEN_PICKAXE = ITEMS.register(
-        "golden_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.GOLD, 1, 1f, new Item.Properties()
-            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        )
-    );
-
-    public static final RegistryObject<BelowNetheritePickaxeItem> SILVER_PICKAXE = ITEMS.register(
-        "silver_pickaxe",
-        () -> new BelowNetheritePickaxeItem(ModTiers.SILVER, 1, 1f, new Item.Properties()
-            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        )
-    );
-
     public static final RegistryObject<PickaxeItem> ELECTRUM_PICKAXE = ITEMS.register(
         "electrum_pickaxe",
-        () -> new PickaxeItem(ModTiers.ELECTRUM, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.ELECTRUM, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
-    public static final RegistryObject<PickaxeItem> DIAMOND_PICKAXE = ITEMS.register(
-        "diamond_pickaxe",
-        () -> new PickaxeItem(ModTiers.DIAMOND, 1, 1f, new Item.Properties()
+    public static final RegistryObject<PickaxeItem> PLATINUM_PICKAXE = ITEMS.register(
+        "platinum_pickaxe",
+        () -> new BelowNetheritePickaxeItem(ModTiers.PLATINUM, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
-
     public static final RegistryObject<PickaxeItem> TITANIUM_PICKAXE = ITEMS.register(
         "titanium_pickaxe",
-        () -> new PickaxeItem(ModTiers.TITANIUM, 1, 1f, new Item.Properties()
+        () -> new BelowNetheritePickaxeItem(ModTiers.TITANIUM, 1, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        )
-    );
-
-    public static final RegistryObject<BucketItem> LIQUIFIED_COAL_BUCKET = ITEMS.register(
-        "liquified_coal_bucket",
-        () -> new BucketItem(
-            () -> ModFluids.SOURCE_LIQUIFIED_COAL.get(),
-            new Item.Properties()
-                .stacksTo(1)
-                .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
     // endregion
@@ -172,10 +129,234 @@ public class ModItems {
     // region Axes
     public static final RegistryObject<Item> FLINT_AXE = ITEMS.register(
         "flint_axe",
-        () -> new BelowNetheriteAxeItem(ModTiers.FLINT, 1, 1f, new Item.Properties()
+        () -> new BelowNetheriteAxeItem(ModTiers.FLINT, 7, -3.2f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
+    public static final RegistryObject<Item> COPPER_AXE = ITEMS.register(
+        "copper_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.COPPER, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TIN_AXE = ITEMS.register(
+        "tin_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.TIN, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> LEAD_AXE = ITEMS.register(
+        "lead_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.LEAD, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> OBSIDIAN_AXE = ITEMS.register(
+        "obsidian_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.OBSIDIAN, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> BRONZE_AXE = ITEMS.register(
+        "bronze_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.BRONZE, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> IRON_AXE = ITEMS.register(
+        "iron_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.IRON, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> NICKEL_AXE = ITEMS.register(
+        "nickel_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.NICKEL, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        ).setEnchantable(false)
+    );
+    public static final RegistryObject<Item> STEEL_AXE = ITEMS.register(
+        "steel_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.STEEL, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> ELECTRUM_AXE = ITEMS.register(
+        "electrum_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.ELECTRUM, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_AXE = ITEMS.register(
+        "platinum_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.PLATINUM, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_AXE = ITEMS.register(
+        "titanium_axe",
+        () -> new BelowNetheriteAxeItem(ModTiers.TITANIUM, 7, -3.2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
+
+    // region Shovels
+    public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register(
+        "copper_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.COPPER, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TIN_SHOVEL = ITEMS.register(
+        "tin_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.TIN, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> LEAD_SHOVEL = ITEMS.register(
+        "lead_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.LEAD, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> OBSIDIAN_SHOVEL = ITEMS.register(
+        "obsidian_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.OBSIDIAN, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> BRONZE_SHOVEL = ITEMS.register(
+        "bronze_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.BRONZE, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> IRON_SHOVEL = ITEMS.register(
+        "iron_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.IRON, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> NICKEL_SHOVEL = ITEMS.register(
+        "nickel_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.NICKEL, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_SHOVEL = ITEMS.register(
+        "steel_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.STEEL, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> ELECTRUM_SHOVEL = ITEMS.register(
+        "electrum_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.ELECTRUM, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_SHOVEL = ITEMS.register(
+        "platinum_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.PLATINUM, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_SHOVEL = ITEMS.register(
+        "titanium_shovel",
+        () -> new BelowNetheriteShovelItem(ModTiers.TITANIUM, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
+
+    // region Hoes
+    public static final RegistryObject<Item> COPPER_HOE = ITEMS.register(
+        "copper_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.COPPER, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TIN_HOE = ITEMS.register(
+        "tin_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.TIN, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> LEAD_HOE = ITEMS.register(
+        "lead_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.LEAD, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> OBSIDIAN_HOE = ITEMS.register(
+        "obsidian_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.OBSIDIAN, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> BRONZE_HOE = ITEMS.register(
+        "bronze_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.BRONZE, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> IRON_HOE = ITEMS.register(
+        "iron_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.IRON, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> NICKEL_HOE = ITEMS.register(
+        "nickel_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.NICKEL, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_HOE = ITEMS.register(
+        "steel_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.STEEL, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> ELECTRUM_HOE = ITEMS.register(
+        "electrum_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.ELECTRUM, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_HOE = ITEMS.register(
+        "platinum_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.PLATINUM, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_HOE = ITEMS.register(
+        "titanium_hoe",
+        () -> new BelowNetheriteHoeItem(ModTiers.TITANIUM, 1, -2f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
+
+    // region Sledgehammer
+    public static final RegistryObject<Item> COPPER_SLEDGEHAMMER = ITEMS.register(
+        "copper_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.COPPER, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );    public static final RegistryObject<Item> TITANIUM_SLEDGEHAMMER = ITEMS.register(
+        "titanium_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.TITANIUM, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
+
+    // region Excavator
+    // endregion
+
+    // region Sword
     // endregion
 
     public static final RegistryObject<Item> LONG_STICK = ITEMS.register(
@@ -2522,6 +2703,17 @@ public class ModItems {
     );
     // endregion
 
+    // region Smelter fluids
+    public static final RegistryObject<BucketItem> LIQUIFIED_COAL_BUCKET = ITEMS.register(
+        "liquified_coal_bucket",
+        () -> new BucketItem(
+            () -> ModFluids.SOURCE_LIQUIFIED_COAL.get(),
+            new Item.Properties()
+                .stacksTo(1)
+                .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
     public static void register (IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

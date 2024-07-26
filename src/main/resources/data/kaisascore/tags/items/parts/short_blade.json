@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_short_blade",
-        "tin_short_blade",
-        "lead_short_blade",
-        "obsidian_short_blade",
-        "bronze_short_blade",
-        "iron_short_blade",
-        "nickel_short_blade",
-        "steel_short_blade",
-        "electrum_short_blade",
-        "platinum_short_blade",
-        "titanium_short_blade"
+        "kaisascore:copper_short_blade",
+        "kaisascore:tin_short_blade",
+        "kaisascore:lead_short_blade",
+        "kaisascore:obsidian_short_blade",
+        "kaisascore:bronze_short_blade",
+        "kaisascore:iron_short_blade",
+        "kaisascore:nickel_short_blade",
+        "kaisascore:steel_short_blade",
+        "kaisascore:electrum_short_blade",
+        "kaisascore:platinum_short_blade",
+        "kaisascore:titanium_short_blade"
     ]
 }

@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_curved_blade",
-        "tin_curved_blade",
-        "lead_curved_blade",
-        "obsidian_curved_blade",
-        "bronze_curved_blade",
-        "iron_curved_blade",
-        "nickel_curved_blade",
-        "steel_curved_blade",
-        "electrum_curved_blade",
-        "platinum_curved_blade",
-        "titanium_curved_blade"
+        "kaisascore:copper_curved_blade",
+        "kaisascore:tin_curved_blade",
+        "kaisascore:lead_curved_blade",
+        "kaisascore:obsidian_curved_blade",
+        "kaisascore:bronze_curved_blade",
+        "kaisascore:iron_curved_blade",
+        "kaisascore:nickel_curved_blade",
+        "kaisascore:steel_curved_blade",
+        "kaisascore:electrum_curved_blade",
+        "kaisascore:platinum_curved_blade",
+        "kaisascore:titanium_curved_blade"
     ]
 }

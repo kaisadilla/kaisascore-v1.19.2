@@ -1,16 +1,16 @@
 {
     "replace": false,
     "values": [
-        "copper_excavator_head",
-        "tin_excavator_head",
-        "lead_excavator_head",
-        "obsidian_excavator_head",
-        "bronze_excavator_head",
-        "iron_excavator_head",
-        "nickel_excavator_head",
-        "steel_excavator_head",
-        "electrum_excavator_head",
-        "platinum_excavator_head",
-        "titanium_excavator_head"
+        "kaisascore:copper_excavator_head",
+        "kaisascore:tin_excavator_head",
+        "kaisascore:lead_excavator_head",
+        "kaisascore:obsidian_excavator_head",
+        "kaisascore:bronze_excavator_head",
+        "kaisascore:iron_excavator_head",
+        "kaisascore:nickel_excavator_head",
+        "kaisascore:steel_excavator_head",
+        "kaisascore:electrum_excavator_head",
+        "kaisascore:platinum_excavator_head",
+        "kaisascore:titanium_excavator_head"
     ]
 }

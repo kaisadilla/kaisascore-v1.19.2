@@ -1,16 +1,16 @@
-package azaria.kaisascore.item.pickaxe;
+package azaria.kaisascore.item.tools;
 
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
-public class BelowNetheritePickaxeItem extends PickaxeItem {
+public class BelowNetheriteAxeItem extends AxeItem {
     private boolean _isEnchantable = true;
 
-    public BelowNetheritePickaxeItem (
+    public BelowNetheriteAxeItem (
         Tier pTier,
         int pAttackDamageModifier,
         float pAttackSpeedModifier,
@@ -19,7 +19,7 @@ public class BelowNetheritePickaxeItem extends PickaxeItem {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
-    public BelowNetheritePickaxeItem setEnchantable (boolean enchantable) {
+    public BelowNetheriteAxeItem setEnchantable (boolean enchantable) {
         _isEnchantable = enchantable;
         return this;
     }
