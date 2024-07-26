@@ -1,4 +1,13 @@
 {
+    "block.kaisascore.platinum_ore": "Platinum Ore",
+    "block.kaisascore.deepslate_platinum_ore": "Deepslate Platinum Ore",
+    "block.kaisascore.raw_platinum_block": "Raw Platinum Block",
+    "block.kaisascore.platinum_block": "Platinum Block",
+    "block.kaisascore.titanium_ore": "Titanium Ore",
+    "block.kaisascore.deepslate_titanium_ore": "Deepslate Titanium Ore",
+    "block.kaisascore.raw_titanium_block": "Raw Titanium Block",
+    "block.kaisascore.titanium_block": "Titanium Block",
+
     "block.kaisascore.basalt_bricks": "Basalt Bricks",
     "block.kaisascore.deepslate_pyrite_ore": "Deepslate Pyrite Ore",
     "block.kaisascore.deepslate_titanium_ore": "Deepslate Titanium Ore",
@@ -20,6 +29,21 @@
     "block.kaisascore.tuff_diadgonal_bricks": "Tuff Diagonal Bricks",
 
     "fluid.kaisascore.liquified_coal": "Liquified Coal",
+    "fluid.kaisascore.molten_platinum": "Molten Platinum",
+    "fluid.kaisascore.molten_titanium": "Molten Titanium",
+
+    "item.kaisascore.raw_platinum": "Raw Platinum",
+    "item.kaisascore.platinum_ingot": "Platinum Ingot",
+    "item.kaisascore.platinum_nugget": "Platinum Nugget",
+    "item.kaisascore.platinum_dust": "Platinum Dust",
+    "item.kaisascore.platinum_gear": "Platinum Gear",
+    "item.kaisascore.molten_platinum_bucket": "Molten Platinum Bucket",
+    "item.kaisascore.raw_titanium": "Raw Titanium",
+    "item.kaisascore.titanium_ingot": "Titanium Ingot",
+    "item.kaisascore.titanium_nugget": "Titanium Nugget",
+    "item.kaisascore.titanium_dust": "Titanium Dust",
+    "item.kaisascore.titanium_gear": "Titanium Gear",
+    "item.kaisascore.molten_titanium_bucket": "Molten Titanium Bucket",
 
     "item.kaisascore.flint_axe": "Flint Axe",
     "item.kaisascore.flint_pick": "Flint Pick",

@@ -7,7 +7,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "titanium_block"
+                    "name": "raw_platinum_block"
                 }
             ],
             "conditions": [

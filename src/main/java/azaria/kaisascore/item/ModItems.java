@@ -17,22 +17,74 @@ public class ModItems {
         ForgeRegistries.ITEMS, KaisasCore.MOD_ID
     );
 
-    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register(
-        "steel_ingot",
+    // region Platinum ore
+    public static final RegistryObject<Item> RAW_PLATINUM = ITEMS.register(
+        "raw_platinum",
         () -> new Item(new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
+    public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register(
+        "platinum_ingot",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_NUGGET = ITEMS.register(
+        "platinum_nugget",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_DUST = ITEMS.register(
+        "platinum_dust",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_GEAR = ITEMS.register(
+        "platinum_gear",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
 
+    // region Titanium ore
+    public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register(
+        "raw_titanium",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
     public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register(
         "titanium_ingot",
         () -> new Item(new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
+    public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register(
+        "titanium_nugget",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_DUST = ITEMS.register(
+        "titanium_dust",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_GEAR = ITEMS.register(
+        "titanium_gear",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
 
-    public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register(
-        "raw_titanium",
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register(
+        "steel_ingot",
         () -> new Item(new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
@@ -2891,7 +2943,7 @@ public class ModItems {
     );
     // endregion
 
-    // region Smelter fluids
+    // region Smeltery fluid buckets
     public static final RegistryObject<BucketItem> LIQUIFIED_COAL_BUCKET = ITEMS.register(
         "liquified_coal_bucket",
         () -> new BucketItem(
@@ -2901,7 +2953,26 @@ public class ModItems {
                 .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
+    public static final RegistryObject<BucketItem> MOLTEN_PLATINUM_BUCKET = ITEMS.register(
+        "molten_platinum_bucket",
+        () -> new BucketItem(
+            () -> ModFluids.MOLTEN_PLATINUM_SOURCE.get(),
+            new Item.Properties()
+                .stacksTo(1)
+                .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<BucketItem> MOLTEN_TITANIUM_BUCKET = ITEMS.register(
+        "molten_titanium_bucket",
+        () -> new BucketItem(
+            () -> ModFluids.MOLTEN_TITANIUM_SOURCE.get(),
+            new Item.Properties()
+                .stacksTo(1)
+                .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
     // endregion
+
     public static void register (IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

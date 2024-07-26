@@ -16,6 +16,7 @@ public class ModFluids {
         ForgeRegistries.FLUIDS, KaisasCore.MOD_ID
     );
 
+    // region Liquified Coal
     public static final RegistryObject<FlowingFluid> SOURCE_LIQUIFIED_COAL = FLUIDS.register(
         "liquified_coal",
         () -> new ForgeFlowingFluid.Source(ModFluids.LIQUIFIED_COAL_PROPS)
@@ -33,6 +34,47 @@ public class ModFluids {
         .levelDecreasePerBlock(1)
         .block(ModBlocks.LIQUIFIED_COAL_BLOCK)
         .bucket(ModItems.LIQUIFIED_COAL_BUCKET);
+    // endregion
+
+    // region Molten Platinum
+    public static final RegistryObject<FlowingFluid> MOLTEN_PLATINUM_SOURCE = FLUIDS.register(
+        "molten_platinum",
+        () -> new ForgeFlowingFluid.Source(ModFluids.MOLTEN_PLATINUM_PROPS)
+    );
+
+    public static final RegistryObject<FlowingFluid> MOLTEN_PLATINUM_FLOWING = FLUIDS.register(
+        "molten_platinum_flowing",
+        () -> new ForgeFlowingFluid.Flowing(ModFluids.MOLTEN_PLATINUM_PROPS)
+    );
+
+    public static final ForgeFlowingFluid.Properties MOLTEN_PLATINUM_PROPS = new ForgeFlowingFluid.Properties(
+        ModFluidTypes.MOLTEN_PLATINUM_FLUID_TYPE, MOLTEN_PLATINUM_SOURCE, MOLTEN_PLATINUM_FLOWING
+    )
+        .slopeFindDistance(4)
+        .levelDecreasePerBlock(1)
+        .block(ModBlocks.MOLTEN_PLATINUM_BLOCK)
+        .bucket(ModItems.MOLTEN_PLATINUM_BUCKET);
+    // endregion
+
+    // region Molten Titanium
+    public static final RegistryObject<FlowingFluid> MOLTEN_TITANIUM_SOURCE = FLUIDS.register(
+        "molten_titanium",
+        () -> new ForgeFlowingFluid.Source(ModFluids.MOLTEN_TITANIUM_PROPS)
+    );
+
+    public static final RegistryObject<FlowingFluid> MOLTEN_TITANIUM_FLOWING = FLUIDS.register(
+        "molten_titanium_flowing",
+        () -> new ForgeFlowingFluid.Flowing(ModFluids.MOLTEN_TITANIUM_PROPS)
+    );
+
+    public static final ForgeFlowingFluid.Properties MOLTEN_TITANIUM_PROPS = new ForgeFlowingFluid.Properties(
+        ModFluidTypes.MOLTEN_TITANIUM_FLUID_TYPE, MOLTEN_TITANIUM_SOURCE, MOLTEN_TITANIUM_FLOWING
+    )
+        .slopeFindDistance(4)
+        .levelDecreasePerBlock(1)
+        .block(ModBlocks.MOLTEN_TITANIUM_BLOCK)
+        .bucket(ModItems.MOLTEN_TITANIUM_BUCKET);
+    // endregion
 
     public static void register (IEventBus bus) {
         FLUIDS.register(bus);

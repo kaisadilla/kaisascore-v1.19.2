@@ -44,6 +44,76 @@ public class ModBlocks {
     //public static final RegistryObject<Block> TUFF_DIAGONAL_BRICKS
     //    = registerTuff("tuff_diagonal_bricks");
 
+    // region Platinum ore
+    public static final RegistryObject<Block> PLATINUM_ORE = registerBlock(
+        "platinum_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(3f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    public static final RegistryObject<Block> DEEPSLATE_PLATINUM_ORE = registerBlock(
+        "deepslate_platinum_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(6f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    public static final RegistryObject<Block> RAW_PLATINUM_BLOCK = registerBlock(
+        "raw_platinum_block",
+        () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            .strength(6f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    public static final RegistryObject<Block> PLATINUM_BLOCK = registerBlock(
+        "platinum_block",
+        () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            .strength(6f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    // endregion
+
+    // region Titanium ore
+    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock(
+        "titanium_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(3f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock(
+        "deepslate_titanium_ore",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(6f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    public static final RegistryObject<Block> RAW_TITANIUM_BLOCK = registerBlock(
+        "raw_titanium_block",
+        () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            .strength(6f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock(
+        "titanium_block",
+        () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            .strength(6f)
+            .requiresCorrectToolForDrops()
+        ),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+    // endregion
+
     public static final RegistryObject<Block> STEEL_BLOCK = registerBlock(
         "steel_block",
         () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
@@ -58,33 +128,6 @@ public class ModBlocks {
         () -> new Block(BlockBehaviour.Properties.of(Material.SAND)
             .strength(1.5f)
             .sound(SoundType.SAND)
-        ),
-        ModCreativeModeTab.KAISACRAFT_TAB
-    );
-
-    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock(
-        "titanium_block",
-        () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-            .strength(9f)
-            .requiresCorrectToolForDrops()
-        ),
-        ModCreativeModeTab.KAISACRAFT_TAB
-    );
-
-    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock(
-        "titanium_ore",
-        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-            .strength(9f)
-            .requiresCorrectToolForDrops()
-        ),
-        ModCreativeModeTab.KAISACRAFT_TAB
-    );
-
-    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock(
-        "deepslate_titanium_ore",
-        () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-            .strength(9f)
-            .requiresCorrectToolForDrops()
         ),
         ModCreativeModeTab.KAISACRAFT_TAB
     );
@@ -134,6 +177,7 @@ public class ModBlocks {
         ModCreativeModeTab.KAISACRAFT_TAB
     );
 
+    // region Smeltery fluid blocks
     public static final RegistryObject<LiquidBlock> LIQUIFIED_COAL_BLOCK = BLOCKS.register(
         "liquified_coal_block",
         () -> new LiquidBlock(
@@ -141,6 +185,21 @@ public class ModBlocks {
             BlockBehaviour.Properties.copy(Blocks.LAVA)
         )
     );
+    public static final RegistryObject<LiquidBlock> MOLTEN_PLATINUM_BLOCK = BLOCKS.register(
+        "molten_platinum_block",
+        () -> new LiquidBlock(
+            ModFluids.MOLTEN_PLATINUM_SOURCE,
+            BlockBehaviour.Properties.copy(Blocks.LAVA)
+        )
+    );
+    public static final RegistryObject<LiquidBlock> MOLTEN_TITANIUM_BLOCK = BLOCKS.register(
+        "molten_titanium_block",
+        () -> new LiquidBlock(
+            ModFluids.MOLTEN_TITANIUM_SOURCE,
+            BlockBehaviour.Properties.copy(Blocks.LAVA)
+        )
+    );
+    // endregion
 
     //public static final RegistryObject<KStonecutterBlock> STONECUTTER = registerBlock(
     //    "stonecutter",
@@ -169,6 +228,7 @@ public class ModBlocks {
         );
     }
 
+    // region Register helpers
     private static RegistryObject<Block> registerBasalt (String internalName) {
         return registerBlock(
             internalName,
@@ -222,4 +282,5 @@ public class ModBlocks {
             ModCreativeModeTab.KAISACRAFT_TAB
         );
     }
+    // endregion
 }

@@ -54,6 +54,7 @@ public class KaisasCore
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             MinecraftForge.EVENT_BUS.register(AoeToolHighlight.class);
+            //MinecraftForge.EVENT_BUS.register(new ChopDownTrees());
         }
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
