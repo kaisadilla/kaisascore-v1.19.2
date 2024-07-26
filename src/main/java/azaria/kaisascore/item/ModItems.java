@@ -6,6 +6,7 @@ import azaria.kaisascore.item.tools.*;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -345,7 +346,62 @@ public class ModItems {
         () -> new BelowNetheriteHammerItem(ModTiers.COPPER, 4, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
-    );    public static final RegistryObject<Item> TITANIUM_SLEDGEHAMMER = ITEMS.register(
+    );
+    public static final RegistryObject<Item> TIN_SLEDGEHAMMER = ITEMS.register(
+        "tin_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.TIN, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> LEAD_SLEDGEHAMMER = ITEMS.register(
+        "lead_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.LEAD, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> OBSIDIAN_SLEDGEHAMMER = ITEMS.register(
+        "obsidian_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.OBSIDIAN, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> BRONZE_SLEDGEHAMMER = ITEMS.register(
+        "bronze_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.BRONZE, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> IRON_SLEDGEHAMMER = ITEMS.register(
+        "iron_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.IRON, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> NICKEL_SLEDGEHAMMER = ITEMS.register(
+        "nickel_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.NICKEL, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_SLEDGEHAMMER = ITEMS.register(
+        "steel_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.STEEL, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> ELECTRUM_SLEDGEHAMMER = ITEMS.register(
+        "electrum_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.ELECTRUM, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_SLEDGEHAMMER = ITEMS.register(
+        "platinum_sledgehammer",
+        () -> new BelowNetheriteHammerItem(ModTiers.PLATINUM, 4, -2.8f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_SLEDGEHAMMER = ITEMS.register(
         "titanium_sledgehammer",
         () -> new BelowNetheriteHammerItem(ModTiers.TITANIUM, 4, -2.8f, new Item.Properties()
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
@@ -354,9 +410,141 @@ public class ModItems {
     // endregion
 
     // region Excavator
+    public static final RegistryObject<Item> COPPER_EXCAVATOR = ITEMS.register(
+        "copper_excavator",
+        () -> new ExcavatorItem(ModTiers.COPPER, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TIN_EXCAVATOR = ITEMS.register(
+        "tin_excavator",
+        () -> new ExcavatorItem(ModTiers.TIN, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> LEAD_EXCAVATOR = ITEMS.register(
+        "lead_excavator",
+        () -> new ExcavatorItem(ModTiers.LEAD, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> OBSIDIAN_EXCAVATOR = ITEMS.register(
+        "obsidian_excavator",
+        () -> new ExcavatorItem(ModTiers.OBSIDIAN, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> BRONZE_EXCAVATOR = ITEMS.register(
+        "bronze_excavator",
+        () -> new ExcavatorItem(ModTiers.BRONZE, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> IRON_EXCAVATOR = ITEMS.register(
+        "iron_excavator",
+        () -> new ExcavatorItem(ModTiers.IRON, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> NICKEL_EXCAVATOR = ITEMS.register(
+        "nickel_excavator",
+        () -> new ExcavatorItem(ModTiers.NICKEL, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_EXCAVATOR = ITEMS.register(
+        "steel_excavator",
+        () -> new ExcavatorItem(ModTiers.STEEL, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> ELECTRUM_EXCAVATOR = ITEMS.register(
+        "electrum_excavator",
+        () -> new ExcavatorItem(ModTiers.ELECTRUM, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_EXCAVATOR = ITEMS.register(
+        "platinum_excavator",
+        () -> new ExcavatorItem(ModTiers.PLATINUM, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_EXCAVATOR = ITEMS.register(
+        "titanium_excavator",
+        () -> new ExcavatorItem(ModTiers.TITANIUM, 2, -3f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
     // endregion
 
     // region Sword
+    public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register(
+        "copper_sword",
+        () -> new SwordItem(ModTiers.COPPER, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TIN_SWORD = ITEMS.register(
+        "tin_sword",
+        () -> new SwordItem(ModTiers.TIN, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> LEAD_SWORD = ITEMS.register(
+        "lead_sword",
+        () -> new SwordItem(ModTiers.LEAD, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register(
+        "obsidian_sword",
+        () -> new SwordItem(ModTiers.OBSIDIAN, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> BRONZE_SWORD = ITEMS.register(
+        "bronze_sword",
+        () -> new SwordItem(ModTiers.BRONZE, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> IRON_SWORD = ITEMS.register(
+        "iron_sword",
+        () -> new SwordItem(ModTiers.IRON, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> NICKEL_SWORD = ITEMS.register(
+        "nickel_sword",
+        () -> new SwordItem(ModTiers.NICKEL, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register(
+        "steel_sword",
+        () -> new SwordItem(ModTiers.STEEL, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> ELECTRUM_SWORD = ITEMS.register(
+        "electrum_sword",
+        () -> new SwordItem(ModTiers.ELECTRUM, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> PLATINUM_SWORD = ITEMS.register(
+        "platinum_sword",
+        () -> new SwordItem(ModTiers.PLATINUM, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> TITANIUM_SWORD = ITEMS.register(
+        "titanium_sword",
+        () -> new SwordItem(ModTiers.TITANIUM, 3, -2.4f, new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
     // endregion
 
     public static final RegistryObject<Item> LONG_STICK = ITEMS.register(

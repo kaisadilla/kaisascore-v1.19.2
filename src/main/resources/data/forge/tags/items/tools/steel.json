@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:steel_pickaxe"
+        "kaisascore:steel_pickaxe",
+        "kaisascore:steel_axe",
+        "kaisascore:steel_shovel",
+        "kaisascore:steel_hoe",
+        "kaisascore:steel_sledgehammer",
+        "kaisascore:steel_excavator",
+        "kaisascore:steel_sword"
     ]
 }

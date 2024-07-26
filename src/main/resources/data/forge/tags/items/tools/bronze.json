@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:bronze_pickaxe"
+        "kaisascore:bronze_pickaxe",
+        "kaisascore:bronze_axe",
+        "kaisascore:bronze_shovel",
+        "kaisascore:bronze_hoe",
+        "kaisascore:bronze_sledgehammer",
+        "kaisascore:bronze_excavator",
+        "kaisascore:bronze_sword"
     ]
 }

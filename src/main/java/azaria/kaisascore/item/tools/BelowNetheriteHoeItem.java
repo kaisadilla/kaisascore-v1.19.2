@@ -42,9 +42,4 @@ public class BelowNetheriteHoeItem extends HoeItem {
 
         return super.isEnchantable(pStack);
     }
-
-    @Override
-    public int getEnchantmentValue () {
-        return super.getEnchantmentValue();
-    }
 }

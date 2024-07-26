@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:lead_pickaxe"
+        "kaisascore:lead_pickaxe",
+        "kaisascore:lead_axe",
+        "kaisascore:lead_shovel",
+        "kaisascore:lead_hoe",
+        "kaisascore:lead_sledgehammer",
+        "kaisascore:lead_excavator",
+        "kaisascore:lead_sword"
     ]
 }

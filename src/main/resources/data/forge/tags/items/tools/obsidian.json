@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:obsidian_pickaxe",
+        "kaisascore:obsidian_axe",
+        "kaisascore:obsidian_shovel",
+        "kaisascore:obsidian_hoe",
+        "kaisascore:obsidian_sledgehammer",
+        "kaisascore:obsidian_excavator",
+        "kaisascore:obsidian_sword"
+    ]
+}

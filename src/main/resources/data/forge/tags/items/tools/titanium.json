@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:titanium_pickaxe"
+        "kaisascore:titanium_pickaxe",
+        "kaisascore:titanium_axe",
+        "kaisascore:titanium_shovel",
+        "kaisascore:titanium_hoe",
+        "kaisascore:titanium_sledgehammer",
+        "kaisascore:titanium_excavator",
+        "kaisascore:titanium_sword"
     ]
 }

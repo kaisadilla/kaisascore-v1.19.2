@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:platinum_pickaxe",
+        "kaisascore:platinum_axe",
+        "kaisascore:platinum_shovel",
+        "kaisascore:platinum_hoe",
+        "kaisascore:platinum_sledgehammer",
+        "kaisascore:platinum_excavator",
+        "kaisascore:platinum_sword"
+    ]
+}

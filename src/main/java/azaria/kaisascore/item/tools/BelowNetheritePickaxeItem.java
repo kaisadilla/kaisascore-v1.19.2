@@ -41,9 +41,4 @@ public class BelowNetheritePickaxeItem extends PickaxeItem {
 
         return super.isEnchantable(pStack);
     }
-
-    @Override
-    public int getEnchantmentValue () {
-        return super.getEnchantmentValue();
-    }
 }

@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:electrum_pickaxe"
+        "kaisascore:electrum_pickaxe",
+        "kaisascore:electrum_axe",
+        "kaisascore:electrum_shovel",
+        "kaisascore:electrum_hoe",
+        "kaisascore:electrum_sledgehammer",
+        "kaisascore:electrum_excavator",
+        "kaisascore:electrum_sword"
     ]
 }

@@ -1,6 +1,7 @@
 package azaria.kaisascore;
 
 import azaria.kaisascore.block.ModBlocks;
+import azaria.kaisascore.event.AoeToolHighlight;
 import azaria.kaisascore.fluid.ModFluidTypes;
 import azaria.kaisascore.fluid.ModFluids;
 import azaria.kaisascore.gui.ModMenuTypes;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import org.slf4j.Logger;
@@ -49,6 +51,10 @@ public class KaisasCore
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            MinecraftForge.EVENT_BUS.register(AoeToolHighlight.class);
+        }
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

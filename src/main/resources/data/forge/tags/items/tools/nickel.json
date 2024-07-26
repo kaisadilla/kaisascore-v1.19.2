@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:nickel_pickaxe"
+        "kaisascore:nickel_pickaxe",
+        "kaisascore:nickel_axe",
+        "kaisascore:nickel_shovel",
+        "kaisascore:nickel_hoe",
+        "kaisascore:nickel_sledgehammer",
+        "kaisascore:nickel_excavator",
+        "kaisascore:nickel_sword"
     ]
 }

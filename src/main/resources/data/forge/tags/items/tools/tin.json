@@ -1,6 +1,12 @@
 {
     "replace": false,
     "values": [
-        "kaisascore:tin_pickaxe"
+        "kaisascore:tin_pickaxe",
+        "kaisascore:tin_axe",
+        "kaisascore:tin_shovel",
+        "kaisascore:tin_hoe",
+        "kaisascore:tin_sledgehammer",
+        "kaisascore:tin_excavator",
+        "kaisascore:tin_sword"
     ]
 }
