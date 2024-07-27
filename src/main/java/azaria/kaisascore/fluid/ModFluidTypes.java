@@ -25,13 +25,6 @@ public class ModFluidTypes {
     public static final ResourceLocation LIQUIFIED_COAL_OVERLAY_ID
         = new ResourceLocation(KaisasCore.MOD_ID, "misc/in_liquified_coal");
 
-    public static final ResourceLocation MOLTEN_PLATINUM_STILL_ID
-        = new ResourceLocation(KaisasCore.MOD_ID, "block/molten_platinum_still");
-    public static final ResourceLocation MOLTEN_PLATINUM_FLOWING_ID
-        = new ResourceLocation(KaisasCore.MOD_ID, "block/molten_platinum_flowing");
-    public static final ResourceLocation MOLTEN_PLATINUM_OVERLAY_ID
-        = new ResourceLocation(KaisasCore.MOD_ID, "misc/in_molten_platinum");
-
     public static final ResourceLocation MOLTEN_TITANIUM_STILL_ID
         = new ResourceLocation(KaisasCore.MOD_ID, "block/molten_titanium_still");
     public static final ResourceLocation MOLTEN_TITANIUM_FLOWING_ID
@@ -58,27 +51,6 @@ public class ModFluidTypes {
             LIQUIFIED_COAL_FLOWING_ID,
             LIQUIFIED_COAL_OVERLAY_ID,
             new Vector3f(0.1f, 0.1f, 0.1f)
-        )
-    );
-
-    public static final RegistryObject<FluidType> MOLTEN_PLATINUM_FLUID_TYPE = FLUID_TYPES.register(
-        "molten_platinum",
-        () -> new BaseFluidType(
-            FluidType.Properties.create()
-                .lightLevel(0)
-                .density(5_000)
-                .viscosity(10_000)
-                .temperature(909)
-                .canConvertToSource(false)
-                .canDrown(true)
-                .canHydrate(false)
-                .canSwim(false)
-                .sound(SoundAction.get(SoundActions.BUCKET_FILL.name()), SoundEvents.BUCKET_FILL_LAVA)
-                .sound(SoundAction.get(SoundActions.BUCKET_EMPTY.name()), SoundEvents.BUCKET_EMPTY_LAVA),
-            MOLTEN_PLATINUM_STILL_ID,
-            MOLTEN_PLATINUM_FLOWING_ID,
-            MOLTEN_PLATINUM_OVERLAY_ID,
-            new Vector3f(68f / 255f, 161f / 255f, 223f / 255f)
         )
     );
 

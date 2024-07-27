@@ -7,7 +7,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "raw_platinum_block"
+                    "name": "kaisascore:raw_platinum_block"
                 }
             ],
             "conditions": [

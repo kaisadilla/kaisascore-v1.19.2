@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "kaisascore:block/tuff_diagonal_bricks"
-    }
-}

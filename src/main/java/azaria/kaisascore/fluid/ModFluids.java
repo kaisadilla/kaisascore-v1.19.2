@@ -36,26 +36,6 @@ public class ModFluids {
         .bucket(ModItems.LIQUIFIED_COAL_BUCKET);
     // endregion
 
-    // region Molten Platinum
-    public static final RegistryObject<FlowingFluid> MOLTEN_PLATINUM_SOURCE = FLUIDS.register(
-        "molten_platinum",
-        () -> new ForgeFlowingFluid.Source(ModFluids.MOLTEN_PLATINUM_PROPS)
-    );
-
-    public static final RegistryObject<FlowingFluid> MOLTEN_PLATINUM_FLOWING = FLUIDS.register(
-        "molten_platinum_flowing",
-        () -> new ForgeFlowingFluid.Flowing(ModFluids.MOLTEN_PLATINUM_PROPS)
-    );
-
-    public static final ForgeFlowingFluid.Properties MOLTEN_PLATINUM_PROPS = new ForgeFlowingFluid.Properties(
-        ModFluidTypes.MOLTEN_PLATINUM_FLUID_TYPE, MOLTEN_PLATINUM_SOURCE, MOLTEN_PLATINUM_FLOWING
-    )
-        .slopeFindDistance(4)
-        .levelDecreasePerBlock(1)
-        .block(ModBlocks.MOLTEN_PLATINUM_BLOCK)
-        .bucket(ModItems.MOLTEN_PLATINUM_BUCKET);
-    // endregion
-
     // region Molten Titanium
     public static final RegistryObject<FlowingFluid> MOLTEN_TITANIUM_SOURCE = FLUIDS.register(
         "molten_titanium",

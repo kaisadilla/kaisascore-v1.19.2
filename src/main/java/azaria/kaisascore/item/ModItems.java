@@ -17,6 +17,33 @@ public class ModItems {
         ForgeRegistries.ITEMS, KaisasCore.MOD_ID
     );
 
+    // region Steel metal
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register(
+        "steel_ingot",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_NUGGET = ITEMS.register(
+        "steel_nugget",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_DUST = ITEMS.register(
+        "steel_dust",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    public static final RegistryObject<Item> STEEL_GEAR = ITEMS.register(
+        "steel_gear",
+        () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
+        )
+    );
+    // endregion
+
     // region Platinum ore
     public static final RegistryObject<Item> RAW_PLATINUM = ITEMS.register(
         "raw_platinum",
@@ -83,13 +110,7 @@ public class ModItems {
     );
     // endregion
 
-    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register(
-        "steel_ingot",
-        () -> new Item(new Item.Properties()
-            .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        )
-    );
-
+    // region Pyrite Ore
     public static final RegistryObject<Item> PYRITE_INGOT = ITEMS.register(
         "pyrite_ingot",
         () -> new Item(new Item.Properties()
@@ -103,6 +124,7 @@ public class ModItems {
             .tab(ModCreativeModeTab.KAISACRAFT_TAB)
         )
     );
+    // endregion
 
     // region Pickaxes
     public static final RegistryObject<BelowNetheritePickaxeItem> FLINT_PICK = ITEMS.register(
@@ -2948,15 +2970,6 @@ public class ModItems {
         "liquified_coal_bucket",
         () -> new BucketItem(
             () -> ModFluids.SOURCE_LIQUIFIED_COAL.get(),
-            new Item.Properties()
-                .stacksTo(1)
-                .tab(ModCreativeModeTab.KAISACRAFT_TAB)
-        )
-    );
-    public static final RegistryObject<BucketItem> MOLTEN_PLATINUM_BUCKET = ITEMS.register(
-        "molten_platinum_bucket",
-        () -> new BucketItem(
-            () -> ModFluids.MOLTEN_PLATINUM_SOURCE.get(),
             new Item.Properties()
                 .stacksTo(1)
                 .tab(ModCreativeModeTab.KAISACRAFT_TAB)

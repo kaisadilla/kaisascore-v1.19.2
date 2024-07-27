@@ -7,7 +7,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "titanium_block"
+                    "name": "kaisascore:titanium_block"
                 }
             ],
             "conditions": [

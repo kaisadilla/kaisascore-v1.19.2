@@ -185,13 +185,6 @@ public class ModBlocks {
             BlockBehaviour.Properties.copy(Blocks.LAVA)
         )
     );
-    public static final RegistryObject<LiquidBlock> MOLTEN_PLATINUM_BLOCK = BLOCKS.register(
-        "molten_platinum_block",
-        () -> new LiquidBlock(
-            ModFluids.MOLTEN_PLATINUM_SOURCE,
-            BlockBehaviour.Properties.copy(Blocks.LAVA)
-        )
-    );
     public static final RegistryObject<LiquidBlock> MOLTEN_TITANIUM_BLOCK = BLOCKS.register(
         "molten_titanium_block",
         () -> new LiquidBlock(
