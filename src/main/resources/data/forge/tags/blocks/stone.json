@@ -4,8 +4,6 @@
         "kaisascore:marble",
         "kaisascore:marble_bricks",
         "kaisascore:marble_pillar",
-        "kaisascore:polished_marble",
-        "kaisascore:polished_tuff",
-        "kaisascore:tuff_bricks"
+        "kaisascore:polished_marble"
     ]
 }
