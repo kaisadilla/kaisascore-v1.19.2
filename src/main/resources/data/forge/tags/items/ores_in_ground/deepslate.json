@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
+        "kaisascore:deepslate_platinum_ore",
         "kaisascore:deepslate_titanium_ore"
     ]
 }

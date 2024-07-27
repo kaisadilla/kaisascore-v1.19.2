@@ -2,6 +2,9 @@
     "replace": false,
     "values": [
         "kaisascore:steel_block",
+        "kaisascore:raw_platinum_block",
+        "kaisascore:platinum_block",
+        "kaisascore:raw_titanium_block",
         "kaisascore:titanium_block"
     ]
 }

@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:steel_nugget",
+        "kaisascore:platinum_nugget",
+        "kaisascore:titanium_nugget"
+    ]
+}

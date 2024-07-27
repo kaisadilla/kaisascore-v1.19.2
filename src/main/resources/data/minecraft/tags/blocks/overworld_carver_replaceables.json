@@ -1,8 +1,10 @@
 {
     "replace": false,
     "values": [
+        "kaisascore:raw_platinum_block",
         "kaisascore:platinum_ore",
         "kaisascore:deepslate_platinum_ore",
+        "kaisascore:raw_titanium_block",
         "kaisascore:titanium_ore",
         "kaisascore:deepslate_titanium_ore"
     ]

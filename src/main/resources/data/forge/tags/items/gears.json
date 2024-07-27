@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "kaisascore:steel_gear",
+        "kaisascore:platinum_gear",
+        "kaisascore:titanium_gear"
+    ]
+}

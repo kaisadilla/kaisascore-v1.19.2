@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
+        "kaisascore:platinum_ore",
         "kaisascore:titanium_ore"
     ]
 }
