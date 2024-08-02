@@ -13,6 +13,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.monster.Spider;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LeavesBlock;
@@ -21,17 +24,32 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.client.event.RenderHighlightEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Objects;
+import java.util.*;
 import java.util.logging.Level;
 
 // Adaptation from Tinkers' Construct's ToolRenderEvents::renderBlockHighlights.
 public class AoeToolHighlight {
     static final int MAX_RENDERED_BLOCKS = 64;
+
+    //@SubscribeEvent
+    //public static void spiderStuff (EntityJoinLevelEvent evt) {
+    //    var entity = evt.getEntity();
+    //    if (entity instanceof Spider == false) return;
+    //
+    //    System.out.println("SPIDER TREATED");
+    //    var spider = (Spider)entity;
+    //
+    //    spider.goalSelector.getAvailableGoals().clear();
+    //    spider.goalSelector.addGoal(1, new FloatGoal(spider));
+    //    spider.goalSelector.addGoal(3, new LeapAtTargetGoal(spider, 0.4F));
+    //    spider.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(spider, 0.8D));
+    //    spider.goalSelector.addGoal(6, new LookAtPlayerGoal(spider, Player.class, 8.0F));
+    //    spider.goalSelector.addGoal(6, new RandomLookAroundGoal(spider));
+    //}
 
     @SubscribeEvent
     public static void renderBlockHighlights (RenderHighlightEvent.Block evt) {

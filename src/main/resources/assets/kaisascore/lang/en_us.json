@@ -26,9 +26,11 @@
     "block.kaisascore.tuff_diadgonal_bricks": "Tuff Diagonal Bricks",
 
     "fluid.kaisascore.liquified_coal": "Liquified Coal",
-    "fluid.kaisascore.molten_platinum": "Molten Platinum",
     "fluid.kaisascore.molten_titanium": "Molten Titanium",
+    "fluid_type.kaisascore.liquified_coal": "Liquified Coal",
+    "fluid_type.kaisascore.molten_titanium": "Molten Titanium",
 
+    "item.kaisascore.long_stick": "Long Stick",
     "item.kaisascore.steel_ingot": "Steel Ingot",
     "item.kaisascore.steel_nugget": "Steel Nugget",
     "item.kaisascore.steel_dust": "Steel Dust",
