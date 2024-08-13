@@ -4,6 +4,7 @@ import azaria.kaisascore.block.ModBlocks;
 import azaria.kaisascore.block.OverridenBlocks;
 import azaria.kaisascore.block.entity.SmithingTableBlockEntity;
 import azaria.kaisascore.gui.screen.SmithingTableScreen;
+import azaria.kaisascore.item.ModTags;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -122,13 +123,22 @@ public class SmithingTableMenu extends AbstractContainerMenu {
         var originStack = originSlot.getItem();
         var copyStack = originStack.copy();
 
-        // the bounds of the ingredient slots in the inventory.
-        int containerStart = SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + TOTAL_PLAYER_INV_COUNT;
-        int containerEnd = SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + TOTAL_PLAYER_INV_COUNT
+        // the indices of each type of slot in the Smithing Table's inventory.
+        int contBase = SmithingTableBlockEntity.BASE_SLOT + TOTAL_PLAYER_INV_COUNT;
+        int contIngrStart = SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + TOTAL_PLAYER_INV_COUNT;
+        int contIngrEnd = SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + TOTAL_PLAYER_INV_COUNT
             + SmithingTableBlockEntity.INGREDIENT_COUNT;
 
         if (index < TOTAL_PLAYER_INV_COUNT) {
-            if (moveItemStackTo(originStack, containerStart, containerEnd, false) == false) {
+            boolean moved;
+            if (originStack.is(ModTags.Items.IS_SMITHING_BASE)) {
+                moved = moveItemStackTo(originStack, contBase, contBase + 1, false);
+            }
+            else {
+                moved = moveItemStackTo(originStack, contIngrStart, contIngrEnd, false);
+            }
+
+            if (moved == false) {
                 return ItemStack.EMPTY;
             }
         }

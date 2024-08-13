@@ -40,6 +40,8 @@ public class ModTags {
             }
         }
 
+        public static TagKey<Item> IS_SMITHING_BASE = tag("is_smithing_base");
+
         private static TagKey<Item> tag (String name) {
             return ItemTags.create(new ResourceLocation(KaisasCore.MOD_ID, name));
         }
