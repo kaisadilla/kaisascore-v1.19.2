@@ -1,13 +1,17 @@
 package azaria.kaisascore;
 
 import azaria.kaisascore.block.ModBlocks;
+import azaria.kaisascore.block.entity.ModBlockEntities;
 import azaria.kaisascore.event.AoeToolHighlight;
 import azaria.kaisascore.fluid.ModFluidTypes;
 import azaria.kaisascore.fluid.ModFluids;
 import azaria.kaisascore.gui.ModMenuTypes;
+import azaria.kaisascore.gui.screen.SmithingTableScreen;
 import azaria.kaisascore.item.ModItems;
+import azaria.kaisascore.recipe.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
@@ -47,7 +51,9 @@ public class KaisasCore
         ModItems.register(modEventBus);
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -101,6 +107,8 @@ public class KaisasCore
                 ModFluids.FLOWING_LIQUIFIED_COAL.get(),
                 RenderType.translucent()
             );
+
+            MenuScreens.register(ModMenuTypes.SMITHING_TABLE_MENU.get(), SmithingTableScreen::new);
         }
     }
 

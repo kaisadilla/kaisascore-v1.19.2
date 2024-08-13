@@ -18,6 +18,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<KStonecutterMenu>> STONECUTTER_MENU
         = registerMenuType("stonecutter_menu", KStonecutterMenu::new);
 
+    public static final RegistryObject<MenuType<SmithingTableMenu>> SMITHING_TABLE_MENU
+        = registerMenuType("smithing_table_menu", SmithingTableMenu::new);
+
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType (
         String name, IContainerFactory<T> factory
     ) {

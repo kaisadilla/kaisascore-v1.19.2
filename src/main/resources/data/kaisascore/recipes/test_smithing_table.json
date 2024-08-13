@@ -1,0 +1,11 @@
+{
+    "type": "kaisascore:smithing",
+    "ingredients": [
+        {
+            "item": "minecraft:beacon"
+        }
+    ],
+    "output": {
+        "item": "minecraft:stick"
+    }
+}
