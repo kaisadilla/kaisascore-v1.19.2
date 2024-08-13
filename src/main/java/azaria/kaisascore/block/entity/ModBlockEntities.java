@@ -2,6 +2,7 @@ package azaria.kaisascore.block.entity;
 
 import azaria.kaisascore.KaisasCore;
 import azaria.kaisascore.block.ModBlocks;
+import azaria.kaisascore.block.OverridenBlocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +19,7 @@ public class ModBlockEntities {
             "smithing_table",
             () -> BlockEntityType.Builder.of(
                 SmithingTableBlockEntity::new,
-                ModBlocks.SMITHING_TABLE.get()
+                OverridenBlocks.SMITHING_TABLE.get()
             ).build(null)
         );
 

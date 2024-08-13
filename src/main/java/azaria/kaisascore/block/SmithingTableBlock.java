@@ -70,16 +70,4 @@ public class SmithingTableBlock extends BaseEntityBlock {
 
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
-
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker (
-        Level level, BlockState state, BlockEntityType<T> type
-    ) {
-        return createTickerHelper(
-            type,
-            ModBlockEntities.SMITHING_TABLE.get(),
-            SmithingTableBlockEntity::tick
-        );
-    }
 }

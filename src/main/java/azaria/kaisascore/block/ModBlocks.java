@@ -194,14 +194,6 @@ public class ModBlocks {
     );
     // endregion
 
-    // region Crafting stations
-    public static final RegistryObject<Block> SMITHING_TABLE = registerBlock(
-        "smithing_table",
-        () -> new SmithingTableBlock(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE)),
-        ModCreativeModeTab.KAISACRAFT_TAB
-    );
-    // endregion
-
     //public static final RegistryObject<KStonecutterBlock> STONECUTTER = registerBlock(
     //    "stonecutter",
     //    () -> new KStonecutterBlock(BlockBehaviour.Properties.copy(Blocks.STONECUTTER)),

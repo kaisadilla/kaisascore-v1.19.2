@@ -144,13 +144,6 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
         updateRecipe();
     }
 
-    // TODO: Probably remove.
-    public static void tick (
-        Level level, BlockPos pos, BlockState state, SmithingTableBlockEntity ent
-    ) {
-        if (level.isClientSide()) return;
-    }
-
     private void updateRecipe () {
         _recipe = getCurrentRecipe();
         var inventory = getInventory();

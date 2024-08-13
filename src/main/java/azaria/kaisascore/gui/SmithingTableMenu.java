@@ -1,6 +1,7 @@
 package azaria.kaisascore.gui;
 
 import azaria.kaisascore.block.ModBlocks;
+import azaria.kaisascore.block.OverridenBlocks;
 import azaria.kaisascore.block.entity.SmithingTableBlockEntity;
 import azaria.kaisascore.gui.screen.SmithingTableScreen;
 import net.minecraft.network.FriendlyByteBuf;
@@ -156,7 +157,7 @@ public class SmithingTableMenu extends AbstractContainerMenu {
         return stillValid(
             ContainerLevelAccess.create(_level, _ent.getBlockPos()),
             player,
-            ModBlocks.SMITHING_TABLE.get()
+            OverridenBlocks.SMITHING_TABLE.get()
         );
     }
 

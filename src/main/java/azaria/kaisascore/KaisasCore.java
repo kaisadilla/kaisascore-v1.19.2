@@ -1,6 +1,7 @@
 package azaria.kaisascore;
 
 import azaria.kaisascore.block.ModBlocks;
+import azaria.kaisascore.block.OverridenBlocks;
 import azaria.kaisascore.block.entity.ModBlockEntities;
 import azaria.kaisascore.event.AoeToolHighlight;
 import azaria.kaisascore.fluid.ModFluidTypes;
@@ -8,6 +9,7 @@ import azaria.kaisascore.fluid.ModFluids;
 import azaria.kaisascore.gui.ModMenuTypes;
 import azaria.kaisascore.gui.screen.SmithingTableScreen;
 import azaria.kaisascore.item.ModItems;
+import azaria.kaisascore.item.OverridenItems;
 import azaria.kaisascore.recipe.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -37,6 +39,7 @@ public class KaisasCore
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "kaisascore";
+    public static final String MINECRAFT_ID = "minecraft";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -47,8 +50,10 @@ public class KaisasCore
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        OverridenItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        OverridenBlocks.register(modEventBus);
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
