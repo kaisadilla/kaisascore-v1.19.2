@@ -12,8 +12,15 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 public class SmithingTableScreen extends AbstractContainerScreen<SmithingTableMenu> {
-    public static final int TOOL_SLOT_X = 49;
-    public static final int TOOL_SLOT_Y = 14;
+    public static final int BASE_SLOT_X = 49;
+    public static final int BASE_SLOT_Y = 14;
+
+    public static final int INGREDIENT_SLOT_FIRST_X = 29;
+    public static final int INGREDIENT_SLOT_SPACING_X = 21;
+    public static final int INGREDIENT_SLOT_Y = 45;
+
+    public static final int RESULT_SLOT_X = 132;
+    public static final int RESULT_SLOT_Y = 30;
 
     public static final ResourceLocation BG_TEX_ID = new ResourceLocation(
         KaisasCore.MOD_ID, "textures/gui/container/smithing_table.png"
@@ -39,8 +46,6 @@ public class SmithingTableScreen extends AbstractContainerScreen<SmithingTableMe
 
         blit(poseStack, xTopLeft, yTopLeft, 0, 0, imageWidth, imageHeight);
         renderToolPlaceholderIcon(poseStack, xTopLeft, yTopLeft);
-
-        renderProgressArrow(poseStack, xTopLeft, yTopLeft);
     }
 
     @Override
@@ -50,15 +55,9 @@ public class SmithingTableScreen extends AbstractContainerScreen<SmithingTableMe
         renderTooltip(poseStack, xMouse, yMouse);
     }
 
-    private void renderProgressArrow (PoseStack poseStack, int x, int y) {
-        if (menu.isCrafting() == false) return;
-
-        blit(poseStack, x + 105, y + 33, 176, 0, 8, menu.getScaledProgress());
-    }
-
     private void renderToolPlaceholderIcon (PoseStack poseStack, int xTopLeft, int yTopLeft) {
         if (menu.getToolSlot().getItem() != ItemStack.EMPTY) return;
 
-        blit(poseStack, xTopLeft + TOOL_SLOT_X, yTopLeft + TOOL_SLOT_Y, 176, 0, 16, 16);
+        blit(poseStack, xTopLeft + BASE_SLOT_X, yTopLeft + BASE_SLOT_Y, 176, 0, 16, 16);
     }
 }

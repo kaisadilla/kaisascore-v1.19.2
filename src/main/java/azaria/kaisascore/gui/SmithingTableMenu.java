@@ -3,8 +3,9 @@ package azaria.kaisascore.gui;
 import azaria.kaisascore.block.ModBlocks;
 import azaria.kaisascore.block.entity.SmithingTableBlockEntity;
 import azaria.kaisascore.gui.screen.SmithingTableScreen;
-import azaria.kaisascore.recipe.SmithingTableRecipe;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -16,14 +17,19 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Optional;
-
 public class SmithingTableMenu extends AbstractContainerMenu {
+    // quickMoveStack constants.
+    private static final int HOTBAR_SLOT_COUNT = 9;
+    private static final int REGULAR_INV_COUNT = 3 * 9;
+    private static final int TOTAL_PLAYER_INV_COUNT = HOTBAR_SLOT_COUNT + REGULAR_INV_COUNT;
+    private static final int LAST_SLOT = TOTAL_PLAYER_INV_COUNT
+        + SmithingTableBlockEntity.CONTAINER_SIZE;
+
     private final SmithingTableBlockEntity _ent;
     private final Level _level;
-    private final ContainerData _data;
 
-    private Slot _toolSlot;
+    private Slot _baseSlot;
+    private Slot _ingredientSlots[];
     private Slot _resultSlot;
     private ResultContainer _resultContainer = new ResultContainer();
 
@@ -31,36 +37,52 @@ public class SmithingTableMenu extends AbstractContainerMenu {
         this(
             id,
             inv,
-            inv.player.level.getBlockEntity(extraData.readBlockPos()),
-            new SimpleContainerData(SmithingTableBlockEntity.CONTAINER_DATA_COUNT)
+            inv.player.level.getBlockEntity(extraData.readBlockPos())
         );
     }
 
-    public SmithingTableMenu (int id, Inventory inv, BlockEntity ent, ContainerData data) {
+    public SmithingTableMenu (int id, Inventory inv, BlockEntity ent) {
         super(ModMenuTypes.SMITHING_TABLE_MENU.get(), id);
         checkContainerSize(inv, SmithingTableBlockEntity.CONTAINER_SIZE);
         _ent = (SmithingTableBlockEntity)ent;
         _level = inv.player.level;
-        _data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         _ent.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-            _toolSlot = addSlot(new SlotItemHandler(
+            _baseSlot = addSlot(new SlotItemHandler(
                 handler,
-                0,
-                SmithingTableScreen.TOOL_SLOT_X,
-                SmithingTableScreen.TOOL_SLOT_Y
+                SmithingTableBlockEntity.BASE_SLOT,
+                SmithingTableScreen.BASE_SLOT_X,
+                SmithingTableScreen.BASE_SLOT_Y
             ));
-            addSlot(new SlotItemHandler(handler, 1, 29, 45));
-            //addSlot(new SlotItemHandler(handler, 2, 132, 30));
+
+            _ingredientSlots = new Slot[3];
+            _ingredientSlots[0] = addSlot(new SlotItemHandler(
+                handler,
+                SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT,
+                SmithingTableScreen.INGREDIENT_SLOT_FIRST_X,
+                SmithingTableScreen.INGREDIENT_SLOT_Y
+            ));
+            _ingredientSlots[1] = addSlot(new SlotItemHandler(
+                handler,
+                SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + 1,
+                SmithingTableScreen.INGREDIENT_SLOT_FIRST_X + SmithingTableScreen.INGREDIENT_SLOT_SPACING_X,
+                SmithingTableScreen.INGREDIENT_SLOT_Y
+            ));
+            _ingredientSlots[2] = addSlot(new SlotItemHandler(
+                handler,
+                SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + 2,
+                SmithingTableScreen.INGREDIENT_SLOT_FIRST_X + (SmithingTableScreen.INGREDIENT_SLOT_SPACING_X * 2),
+                SmithingTableScreen.INGREDIENT_SLOT_Y
+            ));
 
             _resultSlot = addSlot(new SlotItemHandler(
                 handler,
-                2,
-                132,
-                30
+                SmithingTableBlockEntity.OUTPUT_SLOT,
+                SmithingTableScreen.RESULT_SLOT_X,
+                SmithingTableScreen.RESULT_SLOT_Y
             ) {
                 @Override
                 public boolean mayPlace (@NotNull ItemStack stack) {
@@ -68,22 +90,65 @@ public class SmithingTableMenu extends AbstractContainerMenu {
                 }
 
                 @Override
-                public void onTake (Player pPlayer, ItemStack pStack) {
-                    // TODO
-                    super.onTake(pPlayer, pStack);
+                public void onTake (Player player, ItemStack stack) {
+                    ((SmithingTableBlockEntity)ent).craftOne();
+
+                    if (player.level.isClientSide()) {
+
+                    }
+
+                    ContainerLevelAccess.create(_level, _ent.getBlockPos()).execute((level, pos) -> {
+                        level.playSound(
+                            null,
+                            pos,
+                            SoundEvents.SMITHING_TABLE_USE,
+                            SoundSource.BLOCKS,
+                            1f,
+                            1f
+                        );
+                    });
+                    super.onTake(player, stack);
                 }
             });
         });
-
-        addDataSlots(_data);
     }
 
-    // TODO: 28:15
     @Override
     public ItemStack quickMoveStack (Player player, int index) {
-        var stack = ItemStack.EMPTY;
-        // TODO: Moving logic.
-        return stack;
+        var originSlot = slots.get(index);
+        if (originSlot == null || originSlot.hasItem() == false) return ItemStack.EMPTY;
+
+        var originStack = originSlot.getItem();
+        var copyStack = originStack.copy();
+
+        // the bounds of the ingredient slots in the inventory.
+        int containerStart = SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + TOTAL_PLAYER_INV_COUNT;
+        int containerEnd = SmithingTableBlockEntity.FIRST_INGREDIENT_SLOT + TOTAL_PLAYER_INV_COUNT
+            + SmithingTableBlockEntity.INGREDIENT_COUNT;
+
+        if (index < TOTAL_PLAYER_INV_COUNT) {
+            if (moveItemStackTo(originStack, containerStart, containerEnd, false) == false) {
+                return ItemStack.EMPTY;
+            }
+        }
+        else if (index < LAST_SLOT) {
+            if (moveItemStackTo(originStack, 0, TOTAL_PLAYER_INV_COUNT, false) == false) {
+                return ItemStack.EMPTY;
+            }
+        }
+        else {
+            System.out.format("Slot index '%d' is out of bounds", index);
+        }
+
+        if (originStack.getCount() == 0) {
+            originSlot.set(ItemStack.EMPTY);
+        }
+        else {
+            originSlot.setChanged();
+        }
+
+        originSlot.onTake(player, originStack);
+        return copyStack;
     }
 
     @Override
@@ -95,23 +160,8 @@ public class SmithingTableMenu extends AbstractContainerMenu {
         );
     }
 
-    public boolean isCrafting () {
-        return _data.get(0) > 0;
-    }
-
-    public int getScaledProgress () {
-        int progress = _data.get(0);
-        int maxProgress = _data.get(1);
-        int progressArrowHeight = 26;
-
-        if (progress == 0) return 0;
-        if (maxProgress == 0) return 0;
-
-        return (progress * progressArrowHeight) / maxProgress;
-    }
-
     public Slot getToolSlot () {
-        return _toolSlot;
+        return _baseSlot;
     }
 
     private void addPlayerInventory (Inventory inventory) {
@@ -127,15 +177,5 @@ public class SmithingTableMenu extends AbstractContainerMenu {
         for (int x = 0; x < 9; x++) {
             addSlot(new Slot(inventory, x, 8 + (x * 18), 142));
         }
-    }
-
-    private void setupResultSlot (ItemStack stack) {
-        _resultSlot.set(stack);
-    }
-
-    @Override
-    public void slotsChanged (Container pContainer) {
-        System.out.println("things changed");
-        super.slotsChanged(pContainer);
     }
 }
