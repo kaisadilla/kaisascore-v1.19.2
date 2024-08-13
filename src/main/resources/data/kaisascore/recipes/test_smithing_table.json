@@ -2,7 +2,9 @@
     "type": "kaisascore:smithing",
     "ingredients": [
         {
-            "item": "minecraft:beacon"
+            "type": "forge:nbt",
+            "item": "minecraft:beacon",
+            "count": 2
         }
     ],
     "output": {

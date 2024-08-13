@@ -10,6 +10,8 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.crafting.CompoundIngredient;
+import net.minecraftforge.common.crafting.StrictNBTIngredient;
 import org.jetbrains.annotations.Nullable;
 
 public class SmithingTableRecipe implements Recipe<SimpleContainer> {
@@ -31,12 +33,17 @@ public class SmithingTableRecipe implements Recipe<SimpleContainer> {
     public boolean matches (SimpleContainer container, Level level) {
         if (level.isClientSide()) return false;
 
-        return _recipeItems.get(0).test(container.getItem(1));
+        return _recipeItems.get(0).test(container.getItem(0));
+    }
+
+    @Override
+    public ItemStack getResultItem () {
+        return _output;
     }
 
     @Override
     public ItemStack assemble (SimpleContainer container) {
-        return _output;
+        return _output.copy();
     }
 
     @Override
@@ -47,11 +54,6 @@ public class SmithingTableRecipe implements Recipe<SimpleContainer> {
     @Override
     public NonNullList<Ingredient> getIngredients () {
         return _recipeItems;
-    }
-
-    @Override
-    public ItemStack getResultItem () {
-        return _output.copy(); // TODO: This shouldn't be a copy, assemble() should be.
     }
 
     @Override

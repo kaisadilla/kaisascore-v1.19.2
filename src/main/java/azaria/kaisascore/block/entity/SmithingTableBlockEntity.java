@@ -14,9 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -33,9 +31,15 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
     public static final int CONTAINER_SIZE = 3;
     public static final int CONTAINER_DATA_COUNT = 2;
 
+    public static final int TOOL_SLOT = 0;
+    public static final int OUTPUT_SLOT = 2;
+
     private final ItemStackHandler _itemHandler = new ItemStackHandler(CONTAINER_SIZE) {
         @Override
         protected void onContentsChanged (int slot) {
+            if (slot != OUTPUT_SLOT) {
+                updateRecipe(SmithingTableBlockEntity.this);
+            }
             setChanged();
         }
     };
@@ -75,12 +79,13 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
 
     @Override
     public Component getDisplayName () {
-        return Component.literal("Smithing Table");
+        return Component.literal("");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu (int containerId, Inventory playerInv, Player player) {
+        System.out.println("MENU CREATED!");
         return new SmithingTableMenu(containerId, playerInv, this, this._data);
     }
 
@@ -134,27 +139,14 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
         Level level, BlockPos pos, BlockState state, SmithingTableBlockEntity ent
     ) {
         if (level.isClientSide()) return;
-
-        if (hasRecipe(ent)) {
-            ent._progress++;
-            setChanged(level, pos, state);
-
-            if (ent._progress >= ent._maxProgress) {
-                craftItem(ent);
-            }
-        }
-        else {
-            ent.resetProgress();
-            setChanged(level, pos, state);
-        }
     }
 
     private void resetProgress () {
         _progress = 0;
     }
 
-    private static void craftItem (SmithingTableBlockEntity ent) {
-        if (hasRecipe(ent) == false) return;
+    private static void __DEL_craftItem (SmithingTableBlockEntity ent) {
+        if (__DEL_hasRecipe(ent) == false) return;
 
         var level = ent.level;
         var inventory = getInventory(ent);
@@ -163,7 +155,7 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
             .getRecipeManager()
             .getRecipeFor(SmithingTableRecipe.Type.INSTANCE, inventory, level);
 
-        ent._itemHandler.extractItem(1, 1, false);
+        ent._itemHandler.extractItem(1, 2, false);
         ent._itemHandler.setStackInSlot(2, new ItemStack(
             recipe.get().getResultItem().getItem(),
             ent._itemHandler.getStackInSlot(2).getCount() + 1
@@ -172,34 +164,85 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
         ent.resetProgress();
     }
 
-    private static boolean hasRecipe (SmithingTableBlockEntity ent) {
-        var level = ent.level;
+    /**
+     * Returns true if the input items currently placed produce any output.
+     * @return
+     */
+    private static boolean __DEL_hasRecipe (SmithingTableBlockEntity ent) {
         var inventory = getInventory(ent);
-
-        Optional<SmithingTableRecipe> recipe = level
-            .getRecipeManager()
-            .getRecipeFor(SmithingTableRecipe.Type.INSTANCE, inventory, level);
+        var recipe = getCurrentRecipe(ent);
 
         return recipe.isPresent()
-            && canInsertAmountIntoOutput(inventory)
+            && inventory.getItem(1).getCount() >= recipe.get().getIngredients().get(0).getItems()[0].getCount()
+            && canInsertAmountIntoOutput(inventory, 1)
             && canInsertItemIntoOutput(inventory, recipe.get().getResultItem());
-
-        // todo: guess this is hardcoded for now and will be removed
-        //var hasDiamondSwordInFirstSlot = ent._itemHandler.getStackInSlot(1).getItem() == Items.DIAMOND_SWORD;
-        //
-        //return hasDiamondSwordInFirstSlot
-        //    && canInsertAmountIntoOutput(inventory)
-        //    && canInsertItemIntoOutput(inventory, new ItemStack(Blocks.OAK_PLANKS.asItem(), 1));
     }
 
-    private static boolean canInsertAmountIntoOutput (SimpleContainer inventory) {
+    private static void updateRecipe (SmithingTableBlockEntity ent) {
+        var recipe = getCurrentRecipe(ent);
+        var inventory = getInventory(ent);
+
+        if (canOutputRecipe(recipe, inventory)) {
+            ent._itemHandler.setStackInSlot(OUTPUT_SLOT, recipe.get().assemble(null));
+        }
+        else {
+            ent._itemHandler.setStackInSlot(OUTPUT_SLOT, ItemStack.EMPTY);
+        }
+    }
+
+    private static boolean canOutputRecipe (
+        Optional<SmithingTableRecipe> recipe, SimpleContainer inventory
+    ) {
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        if (hasEnoughIngredients(recipe, inventory) == false) {
+            return false;
+        }
+        if (canInsertItemIntoOutput(inventory, recipe.get().getResultItem()) == false) {
+            return false;
+        }
+        if (canInsertAmountIntoOutput(inventory, recipe.get().getResultItem().getCount()) == false) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private static boolean hasEnoughIngredients (
+        Optional<SmithingTableRecipe> recipe, SimpleContainer inventory
+    ) {
+        return inventory.getItem(TOOL_SLOT).getCount()
+            >= recipe.get().getIngredients().get(TOOL_SLOT).getItems()[0].getCount();
+    }
+
+    /**
+     * Gets the Smithing recipe that corresponds to the items the player has put
+     * into this station, if it exists.
+     * @param ent The Smithing Table block entity the player is using.
+     */
+    private static Optional<SmithingTableRecipe> getCurrentRecipe (SmithingTableBlockEntity ent) {
+        var inventory = getInventory(ent);
+        var recipe = ent.level
+            .getRecipeManager()
+            .getRecipeFor(SmithingTableRecipe.Type.INSTANCE, inventory, ent.level);
+
+        // No recipe was found, an empty Optional is returned.
+        if (recipe.isPresent() == false) return recipe;
+
+        return recipe;
+    }
+
+    private static boolean canInsertAmountIntoOutput (SimpleContainer inventory, int amount) {
         // you can only insert n items if that wouldn't go beyond the max stack size.
-        return inventory.getItem(2).getCount() < inventory.getItem(2).getMaxStackSize();
+        return inventory.getItem(OUTPUT_SLOT).getCount() + amount
+            <= inventory.getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutput (SimpleContainer inventory, ItemStack itemStack) {
         // you can only insert the item if the slot is empty or has the same item.
-        return inventory.getItem(2).getItem() == itemStack.getItem() || inventory.getItem(2).isEmpty();
+        return inventory.getItem(OUTPUT_SLOT).isEmpty()
+            || inventory.getItem(OUTPUT_SLOT).getItem() == itemStack.getItem();
     }
 
     private static SimpleContainer getInventory (SmithingTableBlockEntity ent) {
