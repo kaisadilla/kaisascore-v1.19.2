@@ -43,6 +43,8 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
     private final ItemStackHandler _itemHandler = new ItemStackHandler(CONTAINER_SIZE) {
         @Override
         protected void onContentsChanged (int slot) {
+            if (level.isClientSide()) return;
+
             if (slot != OUTPUT_SLOT) {
                 updateRecipe();
             }
@@ -148,35 +150,12 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
         _recipe = getCurrentRecipe();
         var inventory = getInventory();
 
-        if (canOutputRecipe(_recipe, inventory)) {
-            _itemHandler.setStackInSlot(OUTPUT_SLOT, _recipe.get().assemble(null));
-        }
-        else {
+        if (_recipe.isEmpty()) {
             _itemHandler.setStackInSlot(OUTPUT_SLOT, ItemStack.EMPTY);
         }
-    }
-
-    /**
-     * Returns true if the items currently placed in this station allow
-     * for the recipe given to produce its output.
-     * @param recipe The recipe, which can be empty.
-     * @param inventory This table's inventory.
-     * @return
-     */
-    private boolean canOutputRecipe (
-        Optional<SmithingTableRecipe> recipe, SimpleContainer inventory
-    ) {
-        if (recipe.isEmpty()) {
-            return false;
+        else {
+            _itemHandler.setStackInSlot(OUTPUT_SLOT, _recipe.get().assemble(null));
         }
-        if (canPutItemIntoOutput(inventory, recipe.get().getResultItem()) == false) {
-            return false;
-        }
-        if (canIncreaseOutputCountBy(inventory, recipe.get().getResultItem().getCount()) == false) {
-            return false;
-        }
-
-        return true;
     }
 
     /**
@@ -192,30 +171,6 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
     }
 
     /**
-     * Returns true if the output stack's count can be increased by the amount given.
-     * @param inventory This table's inventory.
-     * @param amount The amount to add.
-     * @return
-     */
-    private boolean canIncreaseOutputCountBy (SimpleContainer inventory, int amount) {
-        // you can only insert n items if that wouldn't go beyond the max stack size.
-        return inventory.getItem(OUTPUT_SLOT).getCount() + amount
-            <= inventory.getItem(OUTPUT_SLOT).getMaxStackSize();
-    }
-
-    /**
-     * Returns true if the item given can be put into the output slot.
-     * @param inventory This table's inventory.
-     * @param itemStack The item to put.
-     * @return
-     */
-    private boolean canPutItemIntoOutput (SimpleContainer inventory, ItemStack itemStack) {
-        // you can only insert the item if the slot is empty or has the same item.
-        return inventory.getItem(OUTPUT_SLOT).isEmpty()
-            || inventory.getItem(OUTPUT_SLOT).getItem() == itemStack.getItem();
-    }
-
-    /**
      * Creates an inventory from the items in this table's slots.
      */
     private SimpleContainer getInventory () {
@@ -224,7 +179,6 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
         for (int i = 0; i < _itemHandler.getSlots(); i++) {
             inventory.setItem(i, _itemHandler.getStackInSlot(i));
         }
-
         return inventory;
     }
 }

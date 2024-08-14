@@ -95,6 +95,7 @@ public class SmithingTableRecipe implements Recipe<SimpleContainer> {
                 if (ing.test(itemInContainer)) {
                     if (itemInContainer.getCount() >= ing.getItems()[0].getCount()) {
                         invStackFound = true;
+                        break;
                     }
                 }
             }
