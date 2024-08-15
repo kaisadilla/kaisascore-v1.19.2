@@ -1,8 +1,0 @@
-{
-    "type": "kaisascore:stonecutting",
-    "items": [
-        "minecraft:stone",
-        "minecraft:stone_brick_slab",
-        "minecraft:dirt"
-    ]
-}

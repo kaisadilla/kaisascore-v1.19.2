@@ -18,6 +18,12 @@ public class ModRecipes {
             () -> SmithingTableRecipe.Serializer.INSTANCE
         );
 
+    public static final RegistryObject<RecipeSerializer<ToolWorkbenchRecipe>> TOOL_WORKBENCH_RECIPE
+        = SERIALIZERS.register(
+            ToolWorkbenchRecipe.RECIPE_NAME,
+            () -> ToolWorkbenchRecipe.Serializer.INSTANCE
+        );
+
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

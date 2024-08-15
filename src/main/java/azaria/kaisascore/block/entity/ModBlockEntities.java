@@ -23,6 +23,24 @@ public class ModBlockEntities {
             ).build(null)
         );
 
+    public static final RegistryObject<BlockEntityType<ChiselingTableBlockEntity>> CHISELING_TABLE =
+        BLOCK_ENTITIES.register(
+            "chiseling_table",
+            () -> BlockEntityType.Builder.of(
+                ChiselingTableBlockEntity::new,
+                ModBlocks.CHISELING_TABLE.get()
+            ).build(null)
+        );
+
+    public static final RegistryObject<BlockEntityType<ToolWorkbenchBlockEntity>> TOOL_WORKBENCH =
+        BLOCK_ENTITIES.register(
+            "tool_workbench",
+            () -> BlockEntityType.Builder.of(
+                ToolWorkbenchBlockEntity::new,
+                ModBlocks.TOOL_WORKBENCH.get()
+            ).build(null)
+        );
+
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

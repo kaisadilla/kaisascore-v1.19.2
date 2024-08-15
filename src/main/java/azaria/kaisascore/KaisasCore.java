@@ -10,6 +10,7 @@ import azaria.kaisascore.gui.ModMenuTypes;
 import azaria.kaisascore.gui.screen.SmithingTableScreen;
 import azaria.kaisascore.item.ModItems;
 import azaria.kaisascore.item.OverridenItems;
+import azaria.kaisascore.recipe.ModRecipeTypes;
 import azaria.kaisascore.recipe.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -59,6 +60,7 @@ public class KaisasCore
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModRecipeTypes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -113,7 +115,7 @@ public class KaisasCore
                 RenderType.translucent()
             );
 
-            MenuScreens.register(ModMenuTypes.SMITHING_TABLE_MENU.get(), SmithingTableScreen::new);
+            ModMenuTypes.registerScreens();
         }
     }
 

@@ -1,6 +1,11 @@
 package azaria.kaisascore.gui;
 
 import azaria.kaisascore.KaisasCore;
+import azaria.kaisascore.gui.screen.SmithingTableScreen;
+import azaria.kaisascore.gui.screen.ToolWorkbenchScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -15,11 +20,11 @@ public class ModMenuTypes {
         ForgeRegistries.MENU_TYPES, KaisasCore.MOD_ID
     );
 
-    public static final RegistryObject<MenuType<KStonecutterMenu>> STONECUTTER_MENU
-        = registerMenuType("stonecutter_menu", KStonecutterMenu::new);
-
     public static final RegistryObject<MenuType<SmithingTableMenu>> SMITHING_TABLE_MENU
         = registerMenuType("smithing_table_menu", SmithingTableMenu::new);
+
+    public static final RegistryObject<MenuType<ToolWorkbenchMenu>> TOOL_WORKBENCH_MENU
+        = registerMenuType("tool_workbench_menu", ToolWorkbenchMenu::new);
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType (
         String name, IContainerFactory<T> factory
@@ -29,5 +34,10 @@ public class ModMenuTypes {
 
     public static void register (IEventBus eventBus) {
         MENUS.register(eventBus);
+    }
+
+    public static void registerScreens () {
+        MenuScreens.register(ModMenuTypes.SMITHING_TABLE_MENU.get(), SmithingTableScreen::new);
+        MenuScreens.register(ModMenuTypes.TOOL_WORKBENCH_MENU.get(), ToolWorkbenchScreen::new);
     }
 }

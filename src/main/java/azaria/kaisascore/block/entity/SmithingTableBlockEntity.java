@@ -41,10 +41,12 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
     private Optional<SmithingTableRecipe> _recipe = Optional.empty();
 
     private final ItemStackHandler _itemHandler = new ItemStackHandler(CONTAINER_SIZE) {
+        // TODO: Why is this called 3 times each time?
         @Override
         protected void onContentsChanged (int slot) {
             if (level.isClientSide()) return;
 
+            // TODO: Optimize so it doesn't check recipes every single change.
             if (slot != OUTPUT_SLOT) {
                 updateRecipe();
             }
@@ -93,18 +95,18 @@ public class SmithingTableBlockEntity extends BlockEntity implements MenuProvide
     }
 
     @Override
-    protected void saveAdditional (CompoundTag nbtTag) {
+    protected void saveAdditional (CompoundTag nbt) {
         // store items inside this container.
-        nbtTag.put(NBT_TAG_INVENTORY, _itemHandler.serializeNBT());
+        nbt.put(NBT_TAG_INVENTORY, _itemHandler.serializeNBT());
 
-        super.saveAdditional(nbtTag);
+        super.saveAdditional(nbt);
     }
 
     @Override
-    public void load (CompoundTag nbtTag) {
-        super.load(nbtTag);
+    public void load (CompoundTag nbt) {
+        super.load(nbt);
 
-        _itemHandler.deserializeNBT(nbtTag.getCompound(NBT_TAG_INVENTORY));
+        _itemHandler.deserializeNBT(nbt.getCompound(NBT_TAG_INVENTORY));
     }
 
     public void dropContents () {

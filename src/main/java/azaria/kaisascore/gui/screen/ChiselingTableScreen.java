@@ -1,4 +1,4 @@
 package azaria.kaisascore.gui.screen;
 
-public class StonecutterScreen {
+public class ChiselingTableScreen {
 }
