@@ -194,6 +194,12 @@ public class ModBlocks {
     );
     // endregion
 
+    public static final RegistryObject<Block> CHISELING_TABLE = registerBlock(
+        "chiseling_table",
+        () -> new ChiselingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONECUTTER)),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
     public static final RegistryObject<Block> TOOL_WORKBENCH = registerBlock(
         "tool_workbench",
         () -> new ToolWorkbenchBlock(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)),

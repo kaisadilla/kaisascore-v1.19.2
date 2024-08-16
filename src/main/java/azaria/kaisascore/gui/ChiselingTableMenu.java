@@ -1,8 +1,11 @@
 package azaria.kaisascore.gui;
 
+import azaria.kaisascore.block.ModBlocks;
 import azaria.kaisascore.block.OverridenBlocks;
 import azaria.kaisascore.block.entity.ChiselingTableBlockEntity;
 import azaria.kaisascore.container.inventory.CraftingStationContainer;
+import azaria.kaisascore.container.slot.CraftingStationOutputSlot;
+import azaria.kaisascore.gui.screen.ChiselingTableScreen;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
@@ -10,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.ResultContainer;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -35,7 +39,33 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
 
         _result = new ResultContainer();
 
-        var input = new CraftingStationContainer(this, _ent.getInventory(), 1);
+        var inputCont = new CraftingStationContainer(this, _ent.getInventory(), 1);
+
+        MenuHelpers.addFullPlayerInventory(
+            this::addSlot,
+            inv,
+            0,
+            ChiselingTableScreen.INVENTORY_X,
+            ChiselingTableScreen.INVENTORY_Y
+        );
+
+        addSlot(new Slot(
+            inputCont,
+            0,
+            ChiselingTableScreen.INPUT_X,
+            ChiselingTableScreen.INPUT_Y
+        ));
+
+        addSlot(new CraftingStationOutputSlot(
+            this,
+            inputCont,
+            _result,
+            0,
+            ChiselingTableScreen.RESULT_X,
+            ChiselingTableScreen.RESULT_Y
+        ));
+
+        slotsChanged(inputCont);
     }
 
     @Override
@@ -48,7 +78,7 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
         return stillValid(
             ContainerLevelAccess.create(_level, _ent.getBlockPos()),
             player,
-            OverridenBlocks.CHISELING_TABLE.get()
+            ModBlocks.CHISELING_TABLE.get()
         );
     }
 
