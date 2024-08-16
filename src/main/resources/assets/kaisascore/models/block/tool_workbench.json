@@ -1,6 +1,12 @@
 {
-    "parent": "block/cube_all",
+    "parent": "minecraft:block/cube",
     "textures": {
-        "all": "kaisascore:block/tool_workbench"
+        "up": "kaisascore:block/tool_workbench_top",
+        "down": "kaisascore:block/tool_workbench_bottom",
+        "north": "kaisascore:block/tool_workbench_side_reinforced",
+        "south": "kaisascore:block/tool_workbench_side_reinforced",
+        "east": "kaisascore:block/tool_workbench_side_reinforced",
+        "west": "kaisascore:block/tool_workbench_side_reinforced",
+        "particle": "kaisascore:block/tool_workbench_side_reinforced"
     }
 }

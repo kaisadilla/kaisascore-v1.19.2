@@ -24,7 +24,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class ToolWorkbenchMenu extends AbstractContainerMenu {
     public static final int MATRIX_SIZE = 5;
-    private static final int OUTPUT_SLOT = MATRIX_SIZE * MATRIX_SIZE;
 
     private final Level _level;
     private final ToolWorkbenchBlockEntity _ent;
@@ -50,14 +49,13 @@ public class ToolWorkbenchMenu extends AbstractContainerMenu {
             this, _ent.getInventory(), MATRIX_SIZE
         );
 
-        addSlot(new CraftingStationOutputSlot(
-            this,
-            inputMatrix,
+        MenuHelpers.addFullPlayerInventory(
+            this::addSlot,
             inv,
-            OUTPUT_SLOT,
-            ToolWorkbenchScreen.RESULT_SLOT_X,
-            ToolWorkbenchScreen.RESULT_SLOT_Y
-        ));
+            0,
+            ToolWorkbenchScreen.INVENTORY_X,
+            ToolWorkbenchScreen.INVENTORY_Y
+        );
 
         MenuHelpers.addMatrix(
             this::addSlot,
@@ -69,24 +67,30 @@ public class ToolWorkbenchMenu extends AbstractContainerMenu {
             ToolWorkbenchScreen.INPUT_MATRIX_Y
         );
 
-        MenuHelpers.addFullPlayerInventory(
-            this::addSlot,
-            inv,
+        addSlot(new CraftingStationOutputSlot(
+            this,
+            inputMatrix,
+            _result,
             0,
-            ToolWorkbenchScreen.INVENTORY_X,
-            ToolWorkbenchScreen.INVENTORY_Y
-        );
+            ToolWorkbenchScreen.RESULT_SLOT_X,
+            ToolWorkbenchScreen.RESULT_SLOT_Y
+        ));
 
         slotsChanged(inputMatrix);
     }
 
     @Override
     public void slotsChanged (Container inputMatrix) {
-        // TODO: Match recipe
         var recipe = _level.getRecipeManager()
             .getRecipeFor(ModRecipeTypes.TOOL_WORKBENCH.get(), inputMatrix, _level);
 
-        var recipes = _level.getRecipeManager().getAllRecipesFor(ModRecipeTypes.TOOL_WORKBENCH.get());
+        if (recipe.isPresent()) {
+            var result = recipe.get().assemble(inputMatrix);
+            _result.setItem(0, result);
+        }
+        else {
+            _result.setItem(0, ItemStack.EMPTY);
+        }
 
         super.slotsChanged(inputMatrix);
     }
@@ -102,6 +106,7 @@ public class ToolWorkbenchMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack (Player player, int index) {
+        System.out.println(_result.getItem(0).getDisplayName());
         // TODO
         return ItemStack.EMPTY;
     }

@@ -39,8 +39,8 @@ public class MenuHelpers {
     public static void addFullPlayerInventory (
         IAddSlot addSlot, Inventory inventory, int firstIndex, int xPos, int yPos
     ) {
-        addPlayerInventory(addSlot, inventory, firstIndex + 9, xPos, yPos);
         addPlayerHotbar(addSlot, inventory, firstIndex, xPos, yPos + 58);
+        addPlayerInventory(addSlot, inventory, firstIndex + 9, xPos, yPos);
     }
 
     public static void addPlayerInventory (
@@ -77,7 +77,8 @@ public class MenuHelpers {
      * @param container This matrix's container.
      * @param width The width of the matrix.
      * @param height The height of the matrix.
-     * @param firstIndex The menu index of the first item in the matrix.
+     * @param firstIndex The index of the first item in the container represented
+     *                   by this slot.
      * @param xPos The leftmost position of the matrix.
      * @param yPos The topmost position of the matrix.
      */

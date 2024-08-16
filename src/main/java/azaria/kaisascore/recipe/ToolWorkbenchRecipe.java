@@ -82,11 +82,52 @@ public class ToolWorkbenchRecipe implements Recipe<Container> {
     @Override
     public boolean matches (Container container, Level level) {
         var craftContainer = (CraftingStationContainer)container;
-        for (int x = 0; x <= craftContainer.getWidth() - _width; x++) {
-            for (int y = 0; y < craftContainer.getHeight() - _height; y++) {
 
+        // check every possible position in the 5x5 grid where the pattern
+        // can be. If any of these positions matches the pattern, then it's
+        // a valid way to apply this recipe.
+        for (int x = 0; x <= craftContainer.getWidth() - _width; x++) {
+            for (int y = 0; y <= craftContainer.getHeight() - _height; y++) {
+                if (matchesFromTopLeft(craftContainer, x, y)) return true;
             }
         }
+
+        return false;
+    }
+
+    /**
+     * Checks this recipe's pattern against a subarea of the container,
+     * starting at the topleft position defined by the parameters.
+     * @param container The container to try this recipe on.
+     * @param left The x position of the topleft slot in the container.
+     * @param top The y position of the topleft slot in the container.
+     */
+    private boolean matchesFromTopLeft (
+        CraftingStationContainer container, int left, int top
+    ) {
+        // x and y are relative to the container's chosen top left, and
+        // absolute to the recipe.
+        for (int x = 0; x < _width; x++) {
+            for (int y = 0; y < _height; y++) {
+                // xAbs and yAbs are absolute to the container.
+                int xAbs = x + left;
+                int yAbs = y + top;
+
+                if (xAbs < 0 || yAbs < 0 ||
+                    xAbs >= container.getWidth() || yAbs >= container.getHeight()
+                ) {
+                    continue;
+                }
+
+                var ingr = _ingredients.get(x + (y * _width));
+                var contItem = container.getItem(xAbs + (yAbs * container.getWidth()));
+
+                if (ingr.test(contItem) == false) {
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
 

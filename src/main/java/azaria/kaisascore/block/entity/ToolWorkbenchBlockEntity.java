@@ -34,7 +34,7 @@ public class ToolWorkbenchBlockEntity extends BlockEntity implements MenuProvide
 
     @Override
     public Component getDisplayName () {
-        return Component.literal("");
+        return Component.translatable("container.tool_workbench");
     }
 
     @Nullable

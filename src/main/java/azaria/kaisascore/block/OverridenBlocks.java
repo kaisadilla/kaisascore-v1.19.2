@@ -27,6 +27,12 @@ public class OverridenBlocks {
         ModCreativeModeTab.KAISACRAFT_TAB
     );
 
+    public static final RegistryObject<Block> CHISELING_TABLE = registerBlock(
+        "stonecutter",
+        () -> new ChiselingTableBlock(BlockBehaviour.Properties.copy(Blocks.STONECUTTER)),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
     public static void register (IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

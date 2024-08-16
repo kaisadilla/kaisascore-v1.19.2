@@ -8,6 +8,8 @@
     "block.kaisascore.raw_titanium_block": "Raw Titanium Block",
     "block.kaisascore.titanium_block": "Titanium Block",
 
+    "block.kaisascore.tool_workbench": "Tool Workbench",
+
     "block.kaisascore.basalt_bricks": "Basalt Bricks",
     "block.kaisascore.deepslate_pyrite_ore": "Deepslate Pyrite Ore",
     "block.kaisascore.dirt_redstone_ore": "Dirt Redstone Ore",
@@ -540,5 +542,7 @@
     "item.kaisascore.titanium_scythe_head": "Titanium Scythe Head",
     "item.kaisascore.titanium_halberd_head": "Titanium Halberd Head",
 
-    "itemGroup.kaisa_core": "Kaisacraft's core"
+    "itemGroup.kaisa_core": "Kaisacraft's core",
+
+    "container.tool_workbench": "Tool Workbench"
 }
