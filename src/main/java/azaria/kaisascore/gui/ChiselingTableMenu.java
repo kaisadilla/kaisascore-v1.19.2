@@ -1,11 +1,14 @@
 package azaria.kaisascore.gui;
 
 import azaria.kaisascore.block.ModBlocks;
-import azaria.kaisascore.block.OverridenBlocks;
 import azaria.kaisascore.block.entity.ChiselingTableBlockEntity;
 import azaria.kaisascore.container.inventory.CraftingStationContainer;
+import azaria.kaisascore.container.inventory.CraftingStationMatrixContainer;
 import azaria.kaisascore.container.slot.CraftingStationOutputSlot;
 import azaria.kaisascore.gui.screen.ChiselingTableScreen;
+import azaria.kaisascore.recipe.ModRecipeTypes;
+import azaria.kaisascore.recipe.ModRecipes;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
@@ -23,6 +26,9 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
     private final ChiselingTableBlockEntity _ent;
     private final Container _result;
 
+    private NonNullList<ItemStack> _currentOptions;
+    private int _selectedOption = -1;
+
     public ChiselingTableMenu (int id, Inventory inv, FriendlyByteBuf extraData) {
         this(
             id,
@@ -32,7 +38,7 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
     }
 
     public ChiselingTableMenu (int id, Inventory inv, BlockEntity ent) {
-        super(, id);
+        super(ModMenuTypes.CHISELING_TABLE_MENU.get(), id);
 
         _level = inv.player.level;
         _ent = (ChiselingTableBlockEntity) ent;
@@ -63,14 +69,47 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
             0,
             ChiselingTableScreen.RESULT_X,
             ChiselingTableScreen.RESULT_Y
-        ));
+        ) {
+            @Override
+            public void onTake (Player player, ItemStack stack) {
+                // remove one from each (non-empty) stack in the crafting grid.
+                if (inputCont.isEmpty() == false) {
+                    inputCont.removeItem(0, 1);
+                }
+            }
+        });
 
         slotsChanged(inputCont);
     }
 
+    public NonNullList<ItemStack> getCurrentOptions () { return _currentOptions; }
+    public int getSelectedOption () { return _selectedOption; }
+
     @Override
-    public void slotsChanged (Container container) {
-        // TODO.
+    public void slotsChanged (Container input) {
+        var recipe = _level.getRecipeManager()
+            .getRecipeFor(ModRecipeTypes.CHISELING_TABLE.get(), input, _level);
+
+        if (recipe.isPresent()) {
+            _currentOptions = recipe.get().getOptions();
+        }
+        else {
+            _currentOptions = null;
+        }
+
+        //super.slotsChanged(input);
+    }
+
+    public void selectOption (int index) {
+        _selectedOption = index;
+
+        if (index < 0 || _currentOptions == null || index >= _currentOptions.size()) {
+            _result.setItem(0, ItemStack.EMPTY);
+            return;
+        }
+
+        var selectedItem = _currentOptions.get(_selectedOption);
+        _result.setItem(0, selectedItem.copy());
     }
 
     @Override
@@ -87,4 +126,6 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
         // TODO
         return ItemStack.EMPTY;
     }
+
+
 }

@@ -1,6 +1,5 @@
 package azaria.kaisascore.container.slot;
 
-import azaria.kaisascore.container.inventory.CraftingStationContainer;
 import azaria.kaisascore.recipe.ModRecipeTypes;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;

@@ -24,6 +24,13 @@ public class ModRecipeTypes {
         ))
     );
 
+    public static final RegistryObject<RecipeType<ChiselingTableRecipe>> CHISELING_TABLE = registerType(
+        ChiselingTableRecipe.RECIPE_NAME,
+        () -> RecipeType.simple(new ResourceLocation(
+            KaisasCore.MOD_ID, ChiselingTableRecipe.RECIPE_NAME
+        ))
+    );
+
     private static <T extends Recipe<Container>> RegistryObject<RecipeType<T>> registerType (
         String name, Supplier<RecipeType<T>> type
     ) {

@@ -544,5 +544,6 @@
 
     "itemGroup.kaisa_core": "Kaisacraft's core",
 
-    "container.tool_workbench": "Tool Workbench"
+    "container.tool_workbench": "Tool Workbench",
+    "container.chiseling_table": "Chiseling Table"
 }

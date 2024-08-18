@@ -2,22 +2,17 @@ package azaria.kaisascore.gui;
 
 import azaria.kaisascore.block.ModBlocks;
 import azaria.kaisascore.block.entity.ToolWorkbenchBlockEntity;
-import azaria.kaisascore.container.inventory.CraftingStationContainer;
+import azaria.kaisascore.container.inventory.CraftingStationMatrixContainer;
 import azaria.kaisascore.container.slot.CraftingStationOutputSlot;
 import azaria.kaisascore.gui.screen.ToolWorkbenchScreen;
 import azaria.kaisascore.recipe.ModRecipeTypes;
-import azaria.kaisascore.recipe.ModRecipes;
-import azaria.kaisascore.recipe.SmithingTableRecipe;
-import azaria.kaisascore.recipe.ToolWorkbenchRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.ResultContainer;
-import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -45,7 +40,7 @@ public class ToolWorkbenchMenu extends AbstractContainerMenu {
 
         _result = new ResultContainer();
 
-        var inputMatrix = new CraftingStationContainer(
+        var inputMatrix = new CraftingStationMatrixContainer(
             this, _ent.getInventory(), MATRIX_SIZE
         );
 

@@ -1,32 +1,36 @@
 package azaria.kaisascore.container.inventory;
 
-import net.minecraft.core.NonNullList;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 
-public class CraftingStationContainer implements Container {
-    private final AbstractContainerMenu _menu;
+public class CraftingStationMatrixContainer extends CraftingContainer {
+    private final AbstractContainerMenu _container;
     private final CraftingStationStackHandler _inventory;
 
-    public CraftingStationContainer (
-        AbstractContainerMenu menu,
+    public CraftingStationMatrixContainer (
+        AbstractContainerMenu container,
         CraftingStationStackHandler inventory,
-        int slots
+        int dim
     ) {
-        _menu = menu;
+        this(container, inventory, dim, dim);
+    }
+
+    public CraftingStationMatrixContainer (
+        AbstractContainerMenu container,
+        CraftingStationStackHandler inventory,
+        int width,
+        int height
+    ) {
+        super(container, width, height);
+        _container = container;
         _inventory = inventory;
     }
 
     @Override
-    public int getContainerSize () {
-        return _inventory.getCount();
-    }
-
-    @Override
     public boolean isEmpty () {
-        for (int i = 0; i < _inventory.getCount(); i++) {
+        for (int i = 0; i < getContainerSize(); i++) {
             if (_inventory.getStackInSlot(i).isEmpty() == false) {
                 return false;
             }
@@ -44,7 +48,7 @@ public class CraftingStationContainer implements Container {
     public ItemStack removeItem (int slot, int amount) {
         var stack = _inventory.extractItem(slot, amount, false);
 
-        _menu.slotsChanged(this);
+        _container.slotsChanged(this);
 
         return stack;
     }
@@ -61,7 +65,7 @@ public class CraftingStationContainer implements Container {
     @Override
     public void setItem (int slot, ItemStack stack) {
         _inventory.setStackInSlot(slot, stack);
-        _menu.slotsChanged(this);
+        _container.slotsChanged(this);
     }
 
     @Override

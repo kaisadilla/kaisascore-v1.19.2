@@ -24,6 +24,12 @@ public class ModRecipes {
             () -> ToolWorkbenchRecipe.Serializer.INSTANCE
         );
 
+    public static final RegistryObject<RecipeSerializer<ChiselingTableRecipe>> CHISELING_TABLE_RECIPE
+        = SERIALIZERS.register(
+            ChiselingTableRecipe.RECIPE_NAME,
+            () -> ChiselingTableRecipe.Serializer.INSTANCE
+        );
+
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

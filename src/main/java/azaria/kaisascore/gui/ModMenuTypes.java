@@ -1,6 +1,7 @@
 package azaria.kaisascore.gui;
 
 import azaria.kaisascore.KaisasCore;
+import azaria.kaisascore.gui.screen.ChiselingTableScreen;
 import azaria.kaisascore.gui.screen.SmithingTableScreen;
 import azaria.kaisascore.gui.screen.ToolWorkbenchScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -26,6 +27,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<ToolWorkbenchMenu>> TOOL_WORKBENCH_MENU
         = registerMenuType("tool_workbench_menu", ToolWorkbenchMenu::new);
 
+    public static final RegistryObject<MenuType<ChiselingTableMenu>> CHISELING_TABLE_MENU
+        = registerMenuType("chiseling_table_menu", ChiselingTableMenu::new);
+
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType (
         String name, IContainerFactory<T> factory
     ) {
@@ -39,5 +43,6 @@ public class ModMenuTypes {
     public static void registerScreens () {
         MenuScreens.register(ModMenuTypes.SMITHING_TABLE_MENU.get(), SmithingTableScreen::new);
         MenuScreens.register(ModMenuTypes.TOOL_WORKBENCH_MENU.get(), ToolWorkbenchScreen::new);
+        MenuScreens.register(ModMenuTypes.CHISELING_TABLE_MENU.get(), ChiselingTableScreen::new);
     }
 }

@@ -31,11 +31,6 @@ public class SmithingTableScreen extends AbstractContainerScreen<SmithingTableMe
     }
 
     @Override
-    protected void init () {
-        super.init();
-    }
-
-    @Override
     protected void renderBg (PoseStack poseStack, float partialTick, int xMouse, int yMouse) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);

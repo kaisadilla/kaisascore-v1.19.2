@@ -34,11 +34,6 @@ public class ToolWorkbenchScreen extends AbstractContainerScreen<ToolWorkbenchMe
     }
 
     @Override
-    protected void init () {
-        super.init();
-    }
-
-    @Override
     protected void renderBg (
         PoseStack poseStack, float partialTick, int xMouse, int yMouse
     ) {

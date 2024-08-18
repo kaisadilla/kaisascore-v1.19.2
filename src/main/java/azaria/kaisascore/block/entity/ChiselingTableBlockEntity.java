@@ -47,7 +47,7 @@ public class ChiselingTableBlockEntity extends BlockEntity implements MenuProvid
     public AbstractContainerMenu createMenu (
         int containerId, Inventory playerInv, Player player
     ) {
-        return new ChiselingTableMenu(containerId, playerInv, player);
+        return new ChiselingTableMenu(containerId, playerInv, this);
     }
 
     @Override

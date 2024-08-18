@@ -1,7 +1,7 @@
 package azaria.kaisascore.recipe;
 
 import azaria.kaisascore.KaisasCore;
-import azaria.kaisascore.container.inventory.CraftingStationContainer;
+import azaria.kaisascore.container.inventory.CraftingStationMatrixContainer;
 import azaria.kaisascore.gui.ToolWorkbenchMenu;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -81,7 +81,7 @@ public class ToolWorkbenchRecipe implements Recipe<Container> {
 
     @Override
     public boolean matches (Container container, Level level) {
-        var craftContainer = (CraftingStationContainer)container;
+        var craftContainer = (CraftingStationMatrixContainer)container;
 
         // check every possible position in the 5x5 grid where the pattern
         // can be. If any of these positions matches the pattern, then it's
@@ -103,7 +103,7 @@ public class ToolWorkbenchRecipe implements Recipe<Container> {
      * @param top The y position of the topleft slot in the container.
      */
     private boolean matchesFromTopLeft (
-        CraftingStationContainer container, int left, int top
+        CraftingStationMatrixContainer container, int left, int top
     ) {
         // x and y are relative to the container's chosen top left, and
         // absolute to the recipe.

@@ -12,4 +12,8 @@ public class CraftingStationStackHandler extends ItemStackHandler {
     public NonNullList<ItemStack> getStacks () {
         return this.stacks;
     }
+
+    public int getCount () {
+        return stacks.size();
+    }
 }
