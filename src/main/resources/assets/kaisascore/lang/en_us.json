@@ -1,14 +1,16 @@
 {
     "block.kaisascore.platinum_ore": "Platinum Ore",
     "block.kaisascore.deepslate_platinum_ore": "Deepslate Platinum Ore",
-    "block.kaisascore.raw_platinum_block": "Raw Platinum Block",
-    "block.kaisascore.platinum_block": "Platinum Block",
+    "block.kaisascore.raw_platinum_block": "Block of Raw Platinum",
+    "block.kaisascore.platinum_block": "Block of Platinum",
     "block.kaisascore.titanium_ore": "Titanium Ore",
     "block.kaisascore.deepslate_titanium_ore": "Deepslate Titanium Ore",
-    "block.kaisascore.raw_titanium_block": "Raw Titanium Block",
-    "block.kaisascore.titanium_block": "Titanium Block",
+    "block.kaisascore.raw_titanium_block": "Block of Raw Titanium",
+    "block.kaisascore.titanium_block": "Block of Titanium",
 
     "block.kaisascore.tool_workbench": "Tool Workbench",
+    "block.kaisascore.chiseling_table": "Chiseling Table",
+    "block.kaisascore.sawmill": "Sawmill",
 
     "block.kaisascore.basalt_bricks": "Basalt Bricks",
     "block.kaisascore.deepslate_pyrite_ore": "Deepslate Pyrite Ore",
@@ -545,5 +547,6 @@
     "itemGroup.kaisa_core": "Kaisacraft's core",
 
     "container.tool_workbench": "Tool Workbench",
-    "container.chiseling_table": "Chiseling Table"
+    "container.chiseling_table": "Chiseling Table",
+    "container.sawmill": "Sawmill"
 }

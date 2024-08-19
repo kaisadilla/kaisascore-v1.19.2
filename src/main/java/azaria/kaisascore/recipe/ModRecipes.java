@@ -30,6 +30,12 @@ public class ModRecipes {
             () -> ChiselingTableRecipe.Serializer.INSTANCE
         );
 
+    public static final RegistryObject<RecipeSerializer<SawmillRecipe>> SAWMILL_RECIPE
+        = SERIALIZERS.register(
+            SawmillRecipe.RECIPE_NAME,
+            () -> SawmillRecipe.Serializer.INSTANCE
+        );
+
     public static void register (IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

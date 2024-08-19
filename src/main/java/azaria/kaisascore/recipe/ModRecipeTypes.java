@@ -19,16 +19,17 @@ public class ModRecipeTypes {
 
     public static final RegistryObject<RecipeType<ToolWorkbenchRecipe>> TOOL_WORKBENCH = registerType(
         ToolWorkbenchRecipe.RECIPE_NAME,
-        () -> RecipeType.simple(new ResourceLocation(
-            KaisasCore.MOD_ID, ToolWorkbenchRecipe.RECIPE_NAME
-        ))
+        () -> RecipeType.simple(ToolWorkbenchRecipe.ID)
     );
 
     public static final RegistryObject<RecipeType<ChiselingTableRecipe>> CHISELING_TABLE = registerType(
         ChiselingTableRecipe.RECIPE_NAME,
-        () -> RecipeType.simple(new ResourceLocation(
-            KaisasCore.MOD_ID, ChiselingTableRecipe.RECIPE_NAME
-        ))
+        () -> RecipeType.simple(ChiselingTableRecipe.ID)
+    );
+
+    public static final RegistryObject<RecipeType<SawmillRecipe>> SAWMILL = registerType(
+        SawmillRecipe.RECIPE_NAME,
+        () -> RecipeType.simple(SawmillRecipe.ID)
     );
 
     private static <T extends Recipe<Container>> RegistryObject<RecipeType<T>> registerType (

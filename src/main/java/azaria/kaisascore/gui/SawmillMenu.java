@@ -1,26 +1,22 @@
 package azaria.kaisascore.gui;
 
 import azaria.kaisascore.block.ModBlocks;
-import azaria.kaisascore.block.entity.ToolWorkbenchBlockEntity;
+import azaria.kaisascore.block.entity.SawmillBlockEntity;
 import azaria.kaisascore.container.inventory.CraftingStationMatrixContainer;
 import azaria.kaisascore.container.slot.CraftingStationOutputSlot;
-import azaria.kaisascore.gui.screen.ToolWorkbenchScreen;
+import azaria.kaisascore.gui.screen.SawmillScreen;
 import azaria.kaisascore.recipe.ModRecipeTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
-public class ToolWorkbenchMenu extends AbstractCraftingStationMenu<ToolWorkbenchBlockEntity> {
+public class SawmillMenu extends AbstractCraftingStationMenu<SawmillBlockEntity> {
     public static final int MATRIX_SIZE = 5;
 
-    public ToolWorkbenchMenu (int id, Inventory inv, FriendlyByteBuf extraData) {
+    public SawmillMenu (int id, Inventory inv, FriendlyByteBuf extraData) {
         this(
             id,
             inv,
@@ -28,13 +24,13 @@ public class ToolWorkbenchMenu extends AbstractCraftingStationMenu<ToolWorkbench
         );
     }
 
-    public ToolWorkbenchMenu (int id, Inventory inv, BlockEntity ent) {
+    public SawmillMenu (int id, Inventory inv, BlockEntity ent) {
         super(
-            ModMenuTypes.TOOL_WORKBENCH_MENU.get(),
+            ModMenuTypes.SAWMILL_MENU.get(),
             id,
             inv,
             ent,
-            ModBlocks.TOOL_WORKBENCH.get()
+            ModBlocks.SAWMILL.get()
         );
 
         var inputMatrix = new CraftingStationMatrixContainer(
@@ -44,8 +40,8 @@ public class ToolWorkbenchMenu extends AbstractCraftingStationMenu<ToolWorkbench
         addFullPlayerInventory(
             inv,
             0,
-            ToolWorkbenchScreen.INVENTORY_X,
-            ToolWorkbenchScreen.INVENTORY_Y
+            SawmillScreen.INVENTORY_X,
+            SawmillScreen.INVENTORY_Y
         );
 
         addMatrix(
@@ -53,18 +49,18 @@ public class ToolWorkbenchMenu extends AbstractCraftingStationMenu<ToolWorkbench
             MATRIX_SIZE,
             MATRIX_SIZE,
             0,
-            ToolWorkbenchScreen.INPUT_MATRIX_X,
-            ToolWorkbenchScreen.INPUT_MATRIX_Y
+            SawmillScreen.INPUT_MATRIX_X,
+            SawmillScreen.INPUT_MATRIX_Y
         );
 
         addSlot(new CraftingStationOutputSlot(
-            ModRecipeTypes.TOOL_WORKBENCH.get(),
+            ModRecipeTypes.SAWMILL.get(),
             this,
             inputMatrix,
             _result,
             0,
-            ToolWorkbenchScreen.RESULT_SLOT_X,
-            ToolWorkbenchScreen.RESULT_SLOT_Y
+            SawmillScreen.RESULT_SLOT_X,
+            SawmillScreen.RESULT_SLOT_Y
         ));
 
         slotsChanged(inputMatrix);
@@ -73,7 +69,7 @@ public class ToolWorkbenchMenu extends AbstractCraftingStationMenu<ToolWorkbench
     @Override
     public void slotsChanged (Container inputMatrix) {
         var recipe = _level.getRecipeManager()
-            .getRecipeFor(ModRecipeTypes.TOOL_WORKBENCH.get(), inputMatrix, _level);
+            .getRecipeFor(ModRecipeTypes.SAWMILL.get(), inputMatrix, _level);
 
         if (recipe.isPresent()) {
             var result = recipe.get().assemble(inputMatrix);
@@ -87,9 +83,7 @@ public class ToolWorkbenchMenu extends AbstractCraftingStationMenu<ToolWorkbench
     }
 
     @Override
-    public ItemStack quickMoveStack (Player player, int index) {
-        System.out.println(_result.getItem(0).getDisplayName());
-        // TODO
-        return ItemStack.EMPTY;
+    public ItemStack quickMoveStack (Player pPlayer, int pIndex) {
+        return ItemStack.EMPTY; // TODO
     }
 }

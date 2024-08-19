@@ -41,6 +41,15 @@ public class ModBlockEntities {
             ).build(null)
         );
 
+    public static final RegistryObject<BlockEntityType<SawmillBlockEntity>> SAWMILL =
+        BLOCK_ENTITIES.register(
+            "sawmill",
+            () -> BlockEntityType.Builder.of(
+                SawmillBlockEntity::new,
+                ModBlocks.SAWMILL.get()
+            ).build(null)
+        );
+
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -1,0 +1,21 @@
+{
+    "type": "kaisascore:sawmill",
+    "pattern": [
+        "    S",
+        "   G ",
+        "  S  ",
+        " S   ",
+        "S    "
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:gold_ingot"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "minecraft:dirt"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "type": "kaisascore:chiseling",
+    "options": [
+        "minecraft:copper_block",
+        "minecraft:iron_block",
+        "minecraft:gold_block",
+        "minecraft:diamond_block",
+        "kaisascore:platinum_block",
+        "kaisascore:titanium_block"
+    ]
+}

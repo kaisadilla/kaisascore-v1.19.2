@@ -6,9 +6,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.ForgeHooks;
 
-public class CraftingStationOutputSlot extends Slot {
+public class CraftingStationOutputSlot<T extends Recipe<Container>> extends Slot {
     /**
      * The menu that includes this slot.
      */
@@ -17,6 +19,7 @@ public class CraftingStationOutputSlot extends Slot {
      * The crafting station's input.
      */
     private final Container _inputMatrix;
+    private final RecipeType<T> _recipeType;
 
     /**
      *
@@ -28,6 +31,7 @@ public class CraftingStationOutputSlot extends Slot {
      * @param yPos The y position of this slot in the menu.
      */
     public CraftingStationOutputSlot (
+        RecipeType<T> recipeType,
         AbstractContainerMenu menu,
         Container inputMatrix,
         Container inv,
@@ -36,6 +40,7 @@ public class CraftingStationOutputSlot extends Slot {
         int yPos
     ) {
         super(inv, index, xPos, yPos);
+        _recipeType = recipeType;
         _menu = menu;
         _inputMatrix = inputMatrix;
     }
@@ -51,7 +56,7 @@ public class CraftingStationOutputSlot extends Slot {
         // "leftovers" are the leftovers of a single recipe, e.g. an empty bucket
         // for a recipe that uses a Milk Bucket.
         var leftovers = player.level.getRecipeManager().getRemainingItemsFor(
-            ModRecipeTypes.TOOL_WORKBENCH.get(), _inputMatrix, player.level
+            _recipeType, _inputMatrix, player.level
         );
         ForgeHooks.setCraftingPlayer(null);
 

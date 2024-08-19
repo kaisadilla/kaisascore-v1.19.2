@@ -206,6 +206,12 @@ public class ModBlocks {
         ModCreativeModeTab.KAISACRAFT_TAB
     );
 
+    public static final RegistryObject<Block> SAWMILL = registerBlock(
+        "sawmill",
+        () -> new SawmillBlock(BlockBehaviour.Properties.copy(Blocks.STONECUTTER)),
+        ModCreativeModeTab.KAISACRAFT_TAB
+    );
+
     //public static final RegistryObject<KStonecutterBlock> STONECUTTER = registerBlock(
     //    "stonecutter",
     //    () -> new KStonecutterBlock(BlockBehaviour.Properties.copy(Blocks.STONECUTTER)),

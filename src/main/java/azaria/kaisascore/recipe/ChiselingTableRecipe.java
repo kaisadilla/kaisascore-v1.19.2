@@ -22,6 +22,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class ChiselingTableRecipe implements Recipe<Container> {
     public static final String RECIPE_NAME = "chiseling";
+    public static final ResourceLocation ID = new ResourceLocation(
+        KaisasCore.MOD_ID, RECIPE_NAME
+    );
 
     private final ResourceLocation _id;
     private final NonNullList<ItemStack> _options;
@@ -56,6 +59,18 @@ public class ChiselingTableRecipe implements Recipe<Container> {
 
     public NonNullList<ItemStack> getOptions () {
         return _options;
+    }
+
+    public NonNullList<ItemStack> getOptionsExcept (ItemStack input) {
+        NonNullList<ItemStack> filteredList = NonNullList.create();
+
+        for (var option : _options) {
+            if (option.is(input.getItem()) == false) {
+                filteredList.add(option);
+            }
+        }
+
+        return filteredList;
     }
 
     @Override

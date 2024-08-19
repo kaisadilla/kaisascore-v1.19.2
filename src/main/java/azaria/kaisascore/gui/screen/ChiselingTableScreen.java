@@ -7,8 +7,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -62,8 +64,22 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
 
         blit(poseStack, xTopLeft, yTopLeft, 0, 0, imageWidth, imageHeight);
         renderScrollbar(poseStack);
-        renderButtons(poseStack, xTopLeft, yTopLeft, xMouse, yMouse);
-        renderOptions(xTopLeft + 1, yTopLeft + 1);
+        renderButtons(poseStack, xMouse, yMouse);
+        renderOptions();
+    }
+
+    @Override
+    protected void renderTooltip (PoseStack poseStack, int xMouse, int yMouse) {
+        super.renderTooltip(poseStack, xMouse, yMouse);
+
+        var items = menu.getCurrentOptions();
+        if (items == null) return;
+
+        var hoveredIndex = indexAtMousePos(xMouse, yMouse);
+        if (hoveredIndex == -1) return;
+
+        var hoveredItem = items.get(hoveredIndex);
+        renderTooltip(poseStack, hoveredItem, xMouse, yMouse);
     }
 
     @Override
@@ -73,6 +89,41 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
         renderBackground(poseStack);
         super.render(poseStack, xMouse, yMouse, partialTick);
         renderTooltip(poseStack, xMouse, yMouse);
+    }
+
+    @Override
+    public boolean mouseClicked (double xMouse, double yMouse, int button) {
+        if (isMouseInsideButtonMatrix((int)xMouse, (int)yMouse)) {
+            int index = indexAtMousePos((int)xMouse, (int)yMouse);
+            if (menu.clickMenuButton(minecraft.player, index)) {
+                minecraft.gameMode.handleInventoryButtonClick(menu.containerId, index);
+                minecraft.getSoundManager().play(
+                    SimpleSoundInstance.forUI(
+                        SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1
+                    )
+                );
+            }
+        }
+
+        return super.mouseClicked(xMouse, yMouse, button);
+    }
+
+    @Override
+    public boolean mouseScrolled (double xMouse, double yMouse, double delta) {
+        if (isScrollbarActive() == false) return true;
+
+        int offscreenRows = getOffscreenRows();
+        if (offscreenRows == 0) return true;
+
+        var advancedRows = (int)-delta; // for each 1.0 delta, advance -1 row.
+        firstRow = Mth.clamp(firstRow + advancedRows, 0, offscreenRows);
+        scrollOffset = Mth.clamp(
+            firstRow / (float)offscreenRows,
+            0,
+            1
+        );
+
+        return true;
     }
 
     protected void renderScrollbar (PoseStack poseStack) {
@@ -93,9 +144,14 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
         );
     }
 
-    protected void renderButtons (
-        PoseStack poseStack, int xTopLeft, int yTopLeft, int xMouse, int yMouse
-    ) {
+    /**
+     * Renders the background for each option button. This takes into account if
+     * the button is selected, or hovered.
+     * @param poseStack The pose stack to draw to.
+     * @param xMouse The x position of the mouse in the screen.
+     * @param yMouse The y position of the mouse in the screen.
+     */
+    protected void renderButtons (PoseStack poseStack, int xMouse, int yMouse) {
         var items = menu.getCurrentOptions();
         if (items == null) return;
 
@@ -103,15 +159,15 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
         final int lastItem = firstItem + VISIBLE_BUTTONS; // exclusive
 
         final int btnSize = 18;
-        final int hoveredItem = indexAtMousePos(xTopLeft, yTopLeft, xMouse, yMouse);
+        final int hoveredItem = indexAtMousePos(xMouse, yMouse);
 
         for (int i = firstItem; i < items.size() && i < lastItem; i++) {
             var iRel = i - firstItem;
 
             // the absolute position of the button in the client's screen.
-            int buttonXPos = xTopLeft + BUTTON_MATRIX_X
+            int buttonXPos = leftPos + BUTTON_MATRIX_X
                 + (btnSize * (iRel % BUTTONS_PER_ROW));
-            int buttonYPos = yTopLeft + BUTTON_MATRIX_Y
+            int buttonYPos = topPos + BUTTON_MATRIX_Y
                 + (btnSize * (iRel / BUTTONS_PER_ROW));
             // the button's topleft's y in the texture.
             int texButtonY = 202;
@@ -140,7 +196,10 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
         }
     }
 
-    protected void renderOptions (int xTopLeft, int yTopLeft) {
+    /**
+     * Renders the pictures of the items that can be chosen as options
+     */
+    protected void renderOptions () {
         var items = menu.getCurrentOptions();
         if (items == null) return;
 
@@ -154,38 +213,10 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
 
             minecraft.getItemRenderer().renderAndDecorateItem(
                 items.get(i),
-                xTopLeft + BUTTON_MATRIX_X + (gap * (iRel % BUTTONS_PER_ROW)),
-                yTopLeft + BUTTON_MATRIX_Y + (gap * (iRel / BUTTONS_PER_ROW))
+                leftPos + 1 + BUTTON_MATRIX_X + (gap * (iRel % BUTTONS_PER_ROW)),
+                topPos + 1 + BUTTON_MATRIX_Y + (gap * (iRel / BUTTONS_PER_ROW))
             );
         }
-    }
-
-    @Override
-    public boolean mouseClicked (double xMouse, double yMouse, int button) {
-        if (isMouseInsideButtonMatrix((int)xMouse, (int)yMouse)) {
-            int index = indexAtMousePos(leftPos, topPos, (int)xMouse, (int)yMouse);
-            menu.selectOption(index);
-        }
-
-        return super.mouseClicked(xMouse, yMouse, button);
-    }
-
-    @Override
-    public boolean mouseScrolled (double xMouse, double yMouse, double delta) {
-        if (isScrollbarActive() == false) return true;
-
-        int offscreenRows = getOffscreenRows();
-        if (offscreenRows == 0) return true;
-
-        var advancedRows = (int)-delta; // for each 1.0 delta, advance -1 row.
-        firstRow = Mth.clamp(firstRow + advancedRows, 0, offscreenRows);
-        scrollOffset = Mth.clamp(
-            firstRow / (float)offscreenRows,
-            0,
-            1
-        );
-
-        return true;
     }
 
     protected boolean isScrollbarActive () {
@@ -207,12 +238,10 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
     /**
      * Returns the index of the item hovered by the mouse (in the button matrix).
      * If the mouse is outside the bounds of the button matrix, returns -1.
-     * @param xTopLeft The x position of the menu's topleft in the screen.
-     * @param yTopLeft The y position of the menu's topleft in the screen.
      * @param xMouse The x position of the mouse in the screen.
      * @param yMouse The y position of the mouse in the screen.
      */
-    protected int indexAtMousePos (int xTopLeft, int yTopLeft, int xMouse, int yMouse) {
+    protected int indexAtMousePos (int xMouse, int yMouse) {
         // if the mouse is outside the bounds of the button matrix, nothing is hovered.
         if (isMouseInsideButtonMatrix(xMouse, yMouse) == false) return -1;
 
@@ -223,8 +252,8 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
         final int gap = 18;
 
         // the distance (offset) of the mouse from the topleft of the button index.
-        int xOffset = xMouse - xTopLeft - BUTTON_MATRIX_X;
-        int yOffset = yMouse - yTopLeft - BUTTON_MATRIX_Y;
+        int xOffset = xMouse - leftPos - BUTTON_MATRIX_X;
+        int yOffset = yMouse - topPos - BUTTON_MATRIX_Y;
         int col = xOffset / gap;
         int row = yOffset / gap;
 

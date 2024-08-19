@@ -1,16 +1,13 @@
 package azaria.kaisascore.gui.screen;
 
 import azaria.kaisascore.KaisasCore;
-import azaria.kaisascore.gui.ToolWorkbenchMenu;
-import com.mojang.blaze3d.systems.RenderSystem;
+import azaria.kaisascore.gui.SawmillMenu;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class ToolWorkbenchScreen extends AbstractCraftingStationScreen<ToolWorkbenchMenu> {
+public class SawmillScreen extends AbstractCraftingStationScreen<SawmillMenu> {
     public static final int INPUT_MATRIX_X = 12;
     public static final int INPUT_MATRIX_Y = 17;
     public static final int RESULT_SLOT_X = 142;
@@ -19,11 +16,11 @@ public class ToolWorkbenchScreen extends AbstractCraftingStationScreen<ToolWorkb
     public static final int INVENTORY_Y = 120;
 
     public static final ResourceLocation BG_TEX_ID = new ResourceLocation(
-        KaisasCore.MOD_ID, "textures/gui/container/tool_workbench.png"
+        KaisasCore.MOD_ID, "textures/gui/container/sawmill.png"
     );
 
-    public ToolWorkbenchScreen (
-        ToolWorkbenchMenu menuType, Inventory playerInv, Component title
+    public SawmillScreen (
+        SawmillMenu menuType, Inventory playerInv, Component title
     ) {
         super(menuType, playerInv, title);
 

@@ -1,9 +1,12 @@
 package azaria.kaisascore.gui;
 
 import azaria.kaisascore.gui.screen.ToolWorkbenchScreen;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
 
 public class MenuHelpers {
     /**
@@ -23,6 +26,7 @@ public class MenuHelpers {
     public static final int DEFAULT_INVENTORY_FIRST_INDEX = 9;
     public static final int DEFAULT_HOTBAR_FIRST_INDEX = 0;
     public static final int DEFAULT_FULL_INVENTORY_FIRST_INDEX = 0;
+    public static final int DEFAULT_CONTAINER_FIRST_SLOT_INDEX = 36;
 
     public static void addFullPlayerInventory (
         IAddSlot addSlot, Inventory inventory, int firstIndex
