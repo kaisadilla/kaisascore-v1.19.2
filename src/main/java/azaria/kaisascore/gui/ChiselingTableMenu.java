@@ -87,6 +87,7 @@ public class ChiselingTableMenu extends AbstractContainerMenu {
 
                 slotsChanged(inputCont);
 
+                // TODO: On take many with shift click, this sounds many times.
                 ContainerLevelAccess.create(_level, _ent.getBlockPos()).execute((level, pos) -> {
                     level.playSound(
                         null,

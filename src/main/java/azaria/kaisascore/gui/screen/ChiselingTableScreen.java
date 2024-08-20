@@ -95,13 +95,15 @@ public class ChiselingTableScreen extends AbstractContainerScreen<ChiselingTable
     public boolean mouseClicked (double xMouse, double yMouse, int button) {
         if (isMouseInsideButtonMatrix((int)xMouse, (int)yMouse)) {
             int index = indexAtMousePos((int)xMouse, (int)yMouse);
-            if (menu.clickMenuButton(minecraft.player, index)) {
-                minecraft.gameMode.handleInventoryButtonClick(menu.containerId, index);
-                minecraft.getSoundManager().play(
-                    SimpleSoundInstance.forUI(
-                        SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1
-                    )
-                );
+            if (index != -1) {
+                if (menu.clickMenuButton(minecraft.player, index)) {
+                    minecraft.gameMode.handleInventoryButtonClick(menu.containerId, index);
+                    minecraft.getSoundManager().play(
+                        SimpleSoundInstance.forUI(
+                            SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1
+                        )
+                    );
+                }
             }
         }
 
